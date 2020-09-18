@@ -1,10 +1,11 @@
+#include <stdio.h>
+
 /**
 * main- void
 * description: prints sizes of different types in -32 and -64
-* Return 0
+* Return: 0
 */
 
-#include <stdio.h>											       
 int main(void)
 {
 printf("Size of a char: %lu byte(s)\n", sizeof(char));
