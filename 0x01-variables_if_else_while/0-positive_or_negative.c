@@ -2,7 +2,7 @@
 * main- void
 * description: assign random number each execution
 * Return: 0
-*/   
+*/
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
