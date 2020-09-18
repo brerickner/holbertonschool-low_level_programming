@@ -7,11 +7,12 @@
 #include <stdio.h>
 int main(void)
 {
-int a = 'a';
+char a = 'a';
 
 for (; a <= 'z'; a++)
-{
+
 putchar(a);
-}
+putchar('\n');
+
 return (0);
 }
