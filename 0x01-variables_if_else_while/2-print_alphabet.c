@@ -3,16 +3,16 @@
 * description: output lowercase alphabet
 * Return: 0
 */
-
 #include <stdio.h>
 
 int main(void)
 {
-char a;
+int a;
 
-for (a = 'a'; a <= 'z'; a++);
-
-putchar (a\n);
-
+for (a = 'a'; a <= 'z'; ++a)
+{
+putchar(a);
+putchar('\n');
+}
 return (0);
 }
