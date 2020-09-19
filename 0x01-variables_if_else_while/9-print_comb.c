@@ -12,6 +12,7 @@ int x = '0';
 
 for (; x <= '9'; x++)
 {
+putchar(' ');
 putchar(x);
 putchar(',');
 putchar(' ');
