@@ -1,6 +1,6 @@
 /**
 * main- void
-* description: print out base 16
+* description: ascending single digits 0-9
 * Return: 0
 */
 
@@ -8,9 +8,9 @@
 
 int main(void)
 {
-int x = '31';
+int x = '0';
 
-for (; x <= '39'; x++)
+for (; x <= '9'; x++)
 {
 putchar(' ');
 putchar(x);
