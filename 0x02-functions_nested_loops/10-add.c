@@ -10,9 +10,7 @@
 
 int add(int, int)
 {
-int x;
-int y;
-int result;
+int x, y, result;
 
 result = x + y;
 
