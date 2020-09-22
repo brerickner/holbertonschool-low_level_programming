@@ -12,7 +12,7 @@ int add(int, int)
 {
 int x, y, result;
 
-result = x + y;
+ result =(x, y);
 
 return (result);
 }
