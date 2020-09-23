@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -21,5 +21,5 @@ sum = sum + i;
 }
 }
 printf("%d\n", sum);
-return (sum);
+return (0);
 }
