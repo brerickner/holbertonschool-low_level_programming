@@ -1,17 +1,21 @@
 #include "holberton.h"
 
 /**
-* _isalpha(int c) - checks for alphabetic character
+* _isalpha - int c
+* @c: character
 *
-* description: 
+* description: look for upper and lowercase letter
 * Return: 1 if c is a L/letter, otherwise 0
 */
+
 int _isalpha(int c)
 {
-  int c;
-
-_islpha
-_putchar(x);
-
-_putchar(y);
+if (c >= 65 && c <= 122)
+{
+return (1);
+}
+else
+{
+return (0);
+}
 }
