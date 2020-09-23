@@ -1,4 +1,4 @@
-B#include <stdio.h>
+#include <stdio.h>
 /**
 * main - causes an infinite loop
 * printf \\o/\n" description: comment out infinite loop
