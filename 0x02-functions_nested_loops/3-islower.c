@@ -2,18 +2,17 @@
 
 /**
 * int _islower - inc c
-*
+* @c: char variable
 * description: checks for lowercase characer
 * Return: 1 if c is lowercase, otherwise 0
 */
 
-int _islower(int c);
+int _islower(int c)
 {
-  int c;
-if c
-  _islower(c);
-
-;
-
-_putchar(y);
+if (c >= 'a' && c <= 'z')
+{
+return (1);
+}
+else
+return (0);
 }
