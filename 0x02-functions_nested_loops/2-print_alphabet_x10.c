@@ -8,29 +8,13 @@
 
 void print_alphabet_x10(void)
 {
-char x = 'a'
-char z = '\n';
+char a;
+int i;
 
- while (y < 10) (; x <= 'z'; x++)
-  {
-  
-}
-#include "holberton.h"
-
-/**
-* print_alphabet - function to print lowercase alphabet
-*
-* Return: void
-*/
-
-void print_alphabet(void)
+for (i = '0'; i <= '9'; i++)
 {
-int x = 'a';
-int y = '\n';
-
-for (; x <= 'z'; x++)
-
-_putchar(x);
-
-_putchar(y);
+for (a = 'a'; a <= 'z'; a++)
+_putchar(a);
+_putchar('\n');
+}
 }
