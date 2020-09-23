@@ -21,4 +21,5 @@ sum=sum+i;
 }
 }
 printf("%d",sum);
+return (sum);
 }
