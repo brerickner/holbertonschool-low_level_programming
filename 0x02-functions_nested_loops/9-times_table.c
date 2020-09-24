@@ -9,23 +9,21 @@
 
 void times_table(void)
 {
-	int a, b, c, d, e;
+	int a, b, c;
 
 	for (a = 0; a <= 9; a++)
 {
 	for (b = 0 ; b <= 9 ; b++)
 {
 	c = a * b;
-	d = c / 10;
-	e = c % 10;
-	c = a + (b + 1);
 
-	if (d != 0)
+/* this is where i stopped */	
+	if (c != 0)
 
-	_putchar('0' + d);
-	_putchar('0' + e);
+	_putchar('0' + 1 );
+	_putchar('0' + );
 
-	if (b < 9)
+	if (b <= 9)
 {
 	_putchar(',');
 	_putchar(' ');
