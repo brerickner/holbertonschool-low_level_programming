@@ -1,0 +1,21 @@
+#include "holberton.h"
+
+/**
+* main- void
+* description: print alphabet
+* Return 0
+*/
+
+void print_alphabet(void);
+
+{
+char a = 'a';
+char b = '\n';
+
+for (; a <= 'z' ; a++)
+{
+_putchar(a);
+}
+_putchar(b);
+return (0);
+}
