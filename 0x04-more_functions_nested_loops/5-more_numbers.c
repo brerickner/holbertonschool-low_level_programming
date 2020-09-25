@@ -8,13 +8,13 @@
 
 void more_numbers(void)
 {
-int i;
+  /*int i;*/
 char k;
 
 for (k = 48; k <= 57; k++)
 {
-  _putchar('\n')
-for (i = 0; i <= 14; i++)
+  /* _putchar('\n')*/
+  /*for (i = 0; i <= 14; i++)*/
 _putchar(k);
 _putchar('\n');
 }
