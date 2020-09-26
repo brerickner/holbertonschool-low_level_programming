@@ -10,16 +10,17 @@
 
 int largest_number(int a, int b, int c)
 {
-if (a > b && b > c)
+int largest;
+if (a >= b && a >= c)
 {
-return (a);
+largest = a;
 }
-else if (b > a && a > c)
+else if (b >= a && b >= c)
 {
-return (b);
+largest = b;
 }
-else if (c == 0 && a < 0 && b < 0)
+else
+largest = c;
 {
-return (c);
-}
+return (largest);
 }
