@@ -1,0 +1,7 @@
+#include "holberton.h"
+
+void _putchar(void)
+{
+int to14;
+
+ _putchar
