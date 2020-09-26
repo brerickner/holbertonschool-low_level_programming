@@ -5,20 +5,23 @@
 */
 
 #include <stdio.h>
+
 int main(void)
 {
-int x = '0';
-int y = '0';
+int x, y;
 
-for (x <= '9' ; x++)
+for (x = '0'; x <= '9'; x++)
 {
-for (y <= 9 ; y++)
-putchar(a);
-putchar(b);
-}
+for (y = '0'; y <= '9'; y++)
+{
+putchar(x);
+putchar(y);
+if (x == '9' && y == '9')
+continue;
 putchar(',');
 putchar(' ');
-    
 }
+}
+putchar('\n');
 return (0);
 }
