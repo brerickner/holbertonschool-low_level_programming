@@ -2,20 +2,21 @@
 
 /**
 * more_numbers - numbers on numbers
-* description: prints 10 times the numbers
-* Return: void
+* description: row of numbers
 */
 
 void more_numbers(void)
 {
-  /*int i;*/
-char k;
+int a, r;
 
-for (k = 48; k <= 57; k++)
+for (r = 0; r <= 9; r++)
 {
-  /* _putchar('\n')*/
-  /*for (i = 0; i <= 14; i++)*/
-_putchar(k);
+for (a = 0; a <= 14; a++)
+{
+if (a > 9)
+_putchar((a / 10) + '0');
+_putchar((a % 10) + '0');
+}
 _putchar('\n');
 }
 }
