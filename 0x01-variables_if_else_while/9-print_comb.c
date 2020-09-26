@@ -8,16 +8,17 @@
 
 int main(void)
 {
-int x = '0';
+int x;
 
-for (; x <= '8'; x++)
+for (x = 0; x <= 9; x++)
 {
-putchar(x);
+putchar((x % 10) + '0');
+if (x == 9)
+continue;
 putchar(',');
 putchar(' ');
 }
-{
-putchar('9');
-}
+putchar('\n');
+
 return (0);
 }
