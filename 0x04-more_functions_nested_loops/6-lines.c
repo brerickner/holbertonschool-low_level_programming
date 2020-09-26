@@ -14,7 +14,6 @@ int line;
 if (n > 0)
 {
 for (line = 1; line <= n; line++)
-{
 _putchar('_');
 }
 _putchar('\n');
