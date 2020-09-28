@@ -1,0 +1,22 @@
+B#include <stdio.h>
+
+/*
+ * main - dereferencing pointers
+ *
+ * Return: Always 0.
+ */
+
+int main(void)
+{
+	int ninja;
+	int *pointer;
+
+	ninja = 007;
+	pointer = &ninja;
+	printf("Value of ninja: %d\n", ninja);
+	printf("Addres of ninja: %p\n", &ninja);
+	printf("Value of pointer: %p\n", pointer);
+	*pointer = 402;
+	printf("Value of ninja: %d\n", ninja);
+	return (0);
+}

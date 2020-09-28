@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+/**
+* main - printing size, in bytes, of pointer
+*
+* Return: 0.
+*/
+
+int main (void)
+{
