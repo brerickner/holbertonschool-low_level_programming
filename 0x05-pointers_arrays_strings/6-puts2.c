@@ -13,11 +13,9 @@ void puts2(char *str)
 	int string;
 	char x = '\n';
 
-	string = 0;
-	while (str[string] != '\0')
-	{
-	_putchar(str[string]);
-	string += 2;
-	}
+
+	for(string = 0; str[string] != '\0'; string++)
+	if (string % 2 == 0)
+		_putchar(str[string]);
 	_putchar(x);
 }
