@@ -8,5 +8,5 @@ int main(void)
 	int randomNumber = rand();
 
 	printf("%d\n", randomNumber);
-
+	return (randomNumber);
 }
