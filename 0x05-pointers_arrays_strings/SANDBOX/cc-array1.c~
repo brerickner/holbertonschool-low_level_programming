@@ -1,0 +1,15 @@
+#include <stdio.h>
+int main ()
+{
+	int myGrades[10];
+	myGrades[0] = 10;
+	myGrades[1] = 11;
+
+	printf("%d\n", myGrades[0]);
+
+
+
+
+	return (0);
+
+}
