@@ -2,7 +2,7 @@
 
 /**
  * rev_string - char *s
- * @s: string to be reversed
+ * @s: characters of string
  *
  * description: function that reverses a string
  * Return: void
@@ -10,10 +10,20 @@
 
 void rev_string(char *s)
 {
-	int string;
-	char x = '\n';
+      	int begin, end;
+	char buff;
 
-	for (string = '\0'; s[string] >= 0; string--)
-		_putchar(s[string]);
-	_putchar(x);
+	begin = 0;
+
+	while (s[begin] != '\0')
+	begin++;
+	begin--;
+
+	for (end = 0; end <= begin; end++, begin--)
+	{
+		buff = s[end];
+		s[end] = s[begin];
+		s[begin] = buff;
+	}
+
 }
