@@ -1,0 +1,18 @@
+int minutes, tenMins, hour, highNoon;
+
+for (minutes = 0; minutes < 10; minutes++)
+{
+
+
+
+
+
+
+
+	_putchar(highNoon);
+	_putchar(highNoon);
+	_putchar(highNoon);
+	_putchar(highNoon);
+	_putchar(highNoon);
+
+}
