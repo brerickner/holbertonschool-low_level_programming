@@ -15,11 +15,9 @@ char *_strcat(char *dest, char *src)
 		;
 	for (i2 = 0; src[i2] != '\0'; i2++)
 		;
-	i3 = 0;
 
-	while (i3 <= i2)
+	for (i3 = 0; i3 <= i2; i3++)
 	{
-		i3++;
 		*(dest + (i + i3)) = *(src + i3);
 	}
 	return (dest);
