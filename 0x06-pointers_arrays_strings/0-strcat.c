@@ -1,7 +1,7 @@
-B#include "holberton.h"
+#include "holberton.h"
 
 /**
- * *_strcat(char *dest, char *src)
+ * *_strcat- char *dest, char *src
  * @dest: final string
  * @src: string to be appeneded
  * description: Append src string to dest string
