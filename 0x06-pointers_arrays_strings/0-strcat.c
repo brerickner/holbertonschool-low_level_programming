@@ -1,4 +1,4 @@
-#include "holberton.h"
+B#include "holberton.h"
 
 /**
  * *_strcat(char *dest, char *src)
@@ -11,9 +11,9 @@ char *_strcat(char *dest, char *src)
 {
 	int i, i2;
 
-	for(i = 0; dest[i] != '\0'; i++)
+	for (i = 0; dest[i] != '\0'; i++)
 		;
-	for(i2 = 0; src[i2] != '\0'; i2++)
+	for (i2 = 0; src[i2] != '\0'; i2++)
 		;
 	i = 0;
 
