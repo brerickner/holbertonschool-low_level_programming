@@ -14,7 +14,7 @@ char *rot13(char *s)
 
 	for (i = 0; s[i]; i++)
 	{
-		for (i2 = 0; i2 < ((alpha[i2] + rot_13[i2]) - 14); i2++)
+		for (i2 = 0; i2 < ((alpha[i2] + rot_13[i2]) - 12); i2++)
 		{
 			if (alpha[i2] == s[i])
 			{
