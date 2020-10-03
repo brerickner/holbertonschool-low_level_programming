@@ -17,7 +17,7 @@ char *rot13(char *s)
 		for (i2 = 0; i2 < ((alpha[i] + rot_13[i]) - 12); i2++)
 		{
 			if (alpha[i2] == s[i])
-				s[i]= rot_13[i2];
+				s[i] = rot_13[i2];
 			break;
 		}
 	}
