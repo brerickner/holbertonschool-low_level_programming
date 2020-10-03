@@ -6,35 +6,33 @@
 *
 * Return: 0
 */
-
 void times_table(void)
 {
-	int a, b, c;
+	int i, j, n;
 
-	for (a = 0; a <= 9; a++)
-{
-	for (b = 0 ; b <= 9 ; b++)
-{
-	c = a * b;
-
-/* this is where i stopped */	
-	if (c != 0)
-
-	_putchar('0' + 1 );
-	_putchar('0' + );
-
-	if (b <= 9)
-{
-	_putchar(',');
-	_putchar(' ');
-
-	if (c <= 9)
-	_putchar (' ');
-}
-else
-{
-	_putchar('\n');
-}
-}
-}
+	for (i = 0; i <= 9; i++)
+	{
+		for (j = 0; j <= 9; j++)
+		{
+			n = (i * j);
+			if (j != 0)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+			if (n >= 10)
+			{
+				_putchar((n / 10) + '0');
+				_putchar((n % 10) + '0');
+			}
+			else if (n < 10 && j != 0)
+			{
+				_putchar(' ');
+				_putchar((n % 10) + '0');
+			}
+			else
+				_putchar((n % 10) + '0');
+		}
+		_putchar('\n');
+	}
 }
