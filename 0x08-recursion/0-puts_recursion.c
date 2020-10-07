@@ -16,6 +16,7 @@ void _puts_recursion(char *s)
 					 /* and continue while true and no */
 					 /* longer char in string */
 	}
-	else  /* when no longer pointing to char in string print newline */
+	else  /* print newline when pointer no longer pointing to memory address
+		 in string */
 		_putchar('\n');
 }
