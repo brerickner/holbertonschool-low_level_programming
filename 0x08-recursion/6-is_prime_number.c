@@ -12,6 +12,7 @@ int is_prime_number(int n)
 	{
 		return (0);
 	}
+	return (0);
 }
 
 /**
@@ -25,5 +26,11 @@ int the_prime(int n, int x)
 {
 	if (x == 1)
 		return (1);
+	{
 
+		if (n % x == 0)
+			return (0);
+		else
+			return (0);
+	}
 }
