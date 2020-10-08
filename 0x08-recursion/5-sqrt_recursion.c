@@ -2,7 +2,7 @@
 
  /**
  * _sqrt_recursion - int n
- * description: function that returns natural sq root of a number
+ *
  * @n: natural number
  * Return: squirt
  */
@@ -18,8 +18,8 @@ int _sqrt_recursion(int n)
  * capture_squirt - int nature, int squirt
  * @n: or nature, as in, what we're trying to make happen
  * @squirt: what we must capture to make nature happen
- * description: this is actually a function to find a natural #'s square root
- * but disquised in a way that I can understand
+ *
+ *
  * Return: squirt if captured successfully. -1 if squirts don't make it happen
  */
 
