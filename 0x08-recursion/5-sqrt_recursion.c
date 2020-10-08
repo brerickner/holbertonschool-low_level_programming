@@ -1,9 +1,9 @@
 #include "holberton.h"
 
- /**
+/**
  * _sqrt_recursion - int n
- *
  * @n: natural number
+ * description: find natural sq root of a n
  * Return: squirt
  */
 
@@ -13,13 +13,11 @@ int _sqrt_recursion(int n)
 
 	return (capture_squirt(n, squirt));
 }
-
- /**
+/**
  * capture_squirt - int nature, int squirt
  * @n: or nature, as in, what we're trying to make happen
  * @squirt: what we must capture to make nature happen
- *
- *
+ * description: finding the squares of square root
  * Return: squirt if captured successfully. -1 if squirts don't make it happen
  */
 
