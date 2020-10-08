@@ -1,7 +1,9 @@
-#ifndef HOLBERTON_H
+B#ifndef HOLBERTON_H
 #define HOLBERTON_H
 
 int _putchar(char c);
+int find_strlen(char *s);
+int check_palindrome(char *s, int len, int index);
 int the_prime(int n, int x);
 int capture_squirt(int nature, int squirt);
 void _puts_recursion(char *s);
