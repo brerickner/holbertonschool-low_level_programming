@@ -8,11 +8,13 @@
  */
 int is_prime_number(int n)
 {
-	if (n < 2)
+	int x = 2;
+
+	if (n <= 1)
 	{
 		return (0);
 	}
-	return (0);
+	return (the_prime(n, x));
 }
 
 /**
@@ -22,15 +24,14 @@ int is_prime_number(int n)
  * @x: variable
  * Return: 1, 0
  */
+
 int the_prime(int n, int x)
 {
-	if (x == 1)
+	if (x == n)
 		return (1);
-	{
 
-		if (n % x == 0)
-			return (0);
-		else
-			return (0);
-	}
+	if (n % x == 0)
+		return (0);
+	else
+		return (the_prime(n, x + 1));
 }
