@@ -2,6 +2,7 @@
 #define HOLBERTON_H
 
 int _putchar(char c);
+int the_prime(int n, int x);
 int capture_squirt(int nature, int squirt);
 void _puts_recursion(char *s);
 void _print_rev_recursion(char *s);
