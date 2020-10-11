@@ -9,14 +9,11 @@
 
 void _puts_recursion(char *s)
 {
-	if (*s) /* if pointed to first char of string */
+	if (*s)
 	{
-		_putchar(*s); /* print first character */
-		_puts_recursion((s) + 1) ;/* move up 1 byte from &s */
-					 /* and continue while true and no */
-					 /* longer char in string */
+		_putchar(*s);
+		_puts_recursion((s) + 1);
 	}
-	else  /* print newline when pointer no longer pointing to memory address
-		 in string */
+	else
 		_putchar('\n');
 }
