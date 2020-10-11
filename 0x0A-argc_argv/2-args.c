@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "holberton.h"
 
 /**
@@ -12,13 +11,16 @@
 
 int main(int argc, char *argv[])
 {
-	(void)argv;
-	int index;
+	int count;
 
-	if (argc >= 0)
+	(void)argv;
+
+	if (argc > 1)
 	{
-		for (index = 0; index < argc; index++)
-			printf("%s\n", atoi(argv[index]));
+		for (count = 1; count < argc; count++)
+		{
+			printf("%s\n", argv[count]);
+		}
 	}
-	return(0);
+	return (0);
 }
