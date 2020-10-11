@@ -3,13 +3,13 @@
 #include "holberton.h"
 
 /**
- * main - int argc, char *argv[]
+ * main - int argc, char **argv
  * @argc: argument count
  * @argv: argument vector
  * description: program that prints argument count
  * Return: 0 if successful
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	(void)argv;
 
