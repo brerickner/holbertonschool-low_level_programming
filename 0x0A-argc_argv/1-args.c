@@ -6,16 +6,14 @@
  * main - int argc, char *argv[]
  * @argc: argument count
  * @argv: argument vector
- * description: program that prints its name
+ * description: program that prints number of arguments
  * Return: 0 if successful
  */
 int main(int argc, char *argv[])
 {
 	(void)argv;
 
-	if (argc >= 0)
-	{
-		printf("%d\n", argc);
-	}
+	printf("%d\n", argc);
+
 	return (0);
 }
