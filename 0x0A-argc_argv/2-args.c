@@ -11,16 +11,11 @@
 
 int main(int argc, char *argv[])
 {
-	int count;
+	int index;
 
-	(void)argv;
-
-	if (argc > 1)
+	for (index = 0; index < argc; index++)
 	{
-		for (count = 1; count < argc; count++)
-		{
-			printf("%s\n", argv[count]);
-		}
+		printf("%s\n", argv[index]);
 	}
 	return (0);
 }
