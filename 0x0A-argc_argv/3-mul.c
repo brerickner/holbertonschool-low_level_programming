@@ -12,19 +12,19 @@
 
 int main(int argc, char **argv)
 {
-	int index;
-	int result = 1;
-	(void)argv;
+	int result;
+	int index = 1;
 
-	for (index = 1; index < argc; index++)
+	if (argc == 3)
 	{
-		if (argc < 3)
-		{
-			printf("Error\n");
-			return (1);
-		}
-		result *= atoi(argv[index]);
+		result = atoi(argv[index + 1]) * atoi(argv[index]);
 		printf("%d\n", result);
-	}
 		return (0);
+	}
+	else
+	{
+		printf("Error\n");
+		return (1);
+	}
+	return (0);
 }
