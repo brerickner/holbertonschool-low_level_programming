@@ -16,12 +16,12 @@ int main(int argc, char **argv)
 
 	for (index = 1; index < argc; index++)
 	{
-		if (atoi(*argv) == 0)
+		if (atoi(*argv) != 0)
 		{
 			printf("Error\n");
 			return (1);
 		}
-		result += atoi(argv[index]);
+		result += atoi(*argv);
 	}
 
 	if (argc == 0)
