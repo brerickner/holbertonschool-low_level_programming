@@ -17,16 +17,14 @@ int main(int argc, char **argv)
 	(void)argv;
 
 	for (index = 1; index < argc; index++)
-		;
-		result *= atoi(argv[index]);
-		printf("%d\n", result);
-
+	{
 		if (argc < 3)
 		{
 			printf("Error\n");
-
 			return (1);
 		}
-
+		result *= atoi(argv[index]);
+		printf("%d\n", result);
+	}
 		return (0);
 }
