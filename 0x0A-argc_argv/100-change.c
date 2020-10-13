@@ -12,23 +12,26 @@
 int main(int argc, char *argv[])
 {
 	int coins = 0;
-	int change = atoi(argv[1]);
+	int change;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	if (change < 0)
-	{
-		printf("0\n");
-	}
 	while (argc == 2)
 	{
+		change = atoi(argv[1]);
+
+		if (change < 0)
+		{
+			printf("0\n");
+		}
 		if (change - 25 >= 0)
 		{
 			change -= 25;
 			coins++;
+			;
 		}
 		if (change - 10 >= 0)
 		{
@@ -49,7 +52,7 @@ int main(int argc, char *argv[])
 		{
 			coins++;
 		}
+		printf("%d\n", coins);
 	}
-	printf("%d\n", coins);
 	return (0);
 }
