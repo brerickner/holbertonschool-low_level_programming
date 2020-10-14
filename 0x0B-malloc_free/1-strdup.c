@@ -13,6 +13,9 @@ char *_strdup(char *str)
 	char *buffer;
 	int index;
 
+	if (str == NULL)
+		return (NULL);
+
 	for (index = 0; index != '\0'; index++)
 		;
 	buffer = malloc(index * sizeof(char));
@@ -20,8 +23,6 @@ char *_strdup(char *str)
 	if (buffer == NULL)
 		return (NULL);
 
-	if (str == NULL)
-		return (NULL);
 
 	for (index = 0; str[index]; index++)
 		buffer[index] = str[index];
