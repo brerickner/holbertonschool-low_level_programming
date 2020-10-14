@@ -2,29 +2,16 @@
 #include <stdlib.h>
 
 /**
- * -
- * @
- * @
- * description:
- * Return:
+ * free_grid - int **grid, int height
+ * @grid: grid to be printed
+ * @height: height of grid
+ * description: funtion that frees a 2 dimensional grid of alloc_grid()
+ * Return: void
  */
-
-int main ()
+void free_grid(int **grid, int height)
 {
-	return (0);
-}
-#include "holberton.h"
-#include <stdlib.h>
+	(void)grid;
+	(void)height;
 
-/**
- * -
- * @
- * @
- * description:
- * Return:
- */
-
-int main ()
-{
-	return (0);
+	_putchar('\n');
 }
