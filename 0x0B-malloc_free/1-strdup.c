@@ -20,6 +20,9 @@ char *_strdup(char *str)
 	if (buffer == NULL)
 		return (NULL);
 
+	if (str == NULL)
+		return (NULL);
+
 	for (index = 0; str[index]; index++)
 		buffer[index] = str[index];
 
