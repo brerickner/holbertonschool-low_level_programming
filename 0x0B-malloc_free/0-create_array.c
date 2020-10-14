@@ -1,4 +1,4 @@
-B#include "holberton.h"
+#include "holberton.h"
 #include <stdlib.h>
 
 /**
@@ -14,15 +14,15 @@ char *create_array(unsigned int size, char c)
 	char *arr;
 	unsigned int index;
 
+	arr = malloc(size * sizeof(char));
+
+	if (arr == NULL || size == 0)
+	{
+		return (NULL);
+	}
 	for (index = 0; index < size; index++)
 	{
-		arr = malloc(size * sizeof(char));
-
-		if (arr != NULL || size != 0)
-			arr[0] = c;
-
-		else
-			return (NULL);
+		arr[index] = c;
 	}
 	return (arr);
 }
