@@ -2,29 +2,16 @@
 #include <stdlib.h>
 
 /**
- * -
- * @
- * @
- * description:
- * Return:
+ * char **strtow - char *str
+ * @str: string
+ * description: function that splits a string into words
+ * Return: NULL if fails, str is 0, str is "". Else point str[];
  */
-
-int main ()
+char **strtow(char *str)
 {
-	return (0);
-}
-#include "holberton.h"
-#include <stdlib.h>
 
-/**
- * -
- * @
- * @
- * description:
- * Return:
- */
-
-int main ()
-{
-	return (0);
+	if (str == NULL)
+		return (NULL);
+	else
+		return (NULL);
 }
