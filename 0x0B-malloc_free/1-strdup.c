@@ -2,29 +2,27 @@
 #include <stdlib.h>
 
 /**
- * -
- * @
- * @
- * description:
- * Return:
+ * *_strdup - char *str
+ * @str: string given
+ * description: function that returns pointer to a new allocated memory,
+ * which contains copy of str given in parameter
+ * Return: NULL if insufficient memory or str is NULL. Else pointer to dupl.
  */
-
-int main ()
+char *_strdup(char *str)
 {
-	return (0);
-}
-#include "holberton.h"
-#include <stdlib.h>
+	char *buffer;
+	int index;
 
-/**
- * -
- * @
- * @
- * description:
- * Return:
- */
+	for (index = 0; index != '\0'; index++)
+		;
+	buffer = malloc(index * sizeof(char));
 
-int main ()
-{
-	return (0);
+	if (buffer == NULL)
+		return (NULL);
+
+	for (index = 0; str[index]; index++)
+		buffer[index] = str[index];
+
+	buffer[index] = '\0';
+	return (buffer);
 }
