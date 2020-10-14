@@ -2,29 +2,17 @@
 #include <stdlib.h>
 
 /**
- * -
- * @
- * @
- * description:
- * Return:
+ * *str_concat - char *s1, char *s2
+ * @s1: string added to space allocated
+ * @s2: string added to s2
+ * description: function that concatenates two strings
+ * Return: NULL on failure. Else pointer with S1 + S2 + '\0'
  */
 
-int main ()
+char *str_concat(char *s1, char *s2)
 {
-	return (0);
-}
-#include "holberton.h"
-#include <stdlib.h>
+	(void)s1;
+	(void)s2;
 
-/**
- * -
- * @
- * @
- * description:
- * Return:
- */
-
-int main ()
-{
-	return (0);
+	return (s1);
 }
