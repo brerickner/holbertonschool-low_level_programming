@@ -18,11 +18,10 @@ char *_strdup(char *str)
 
 	for (index = 0; index != '\0'; index++)
 		;
-	buffer = malloc(index * sizeof(char));
+	buffer = malloc(index * sizeof(char) + 1);
 
 	if (buffer == NULL)
 		return (NULL);
-
 
 	for (index = 0; str[index]; index++)
 		buffer[index] = str[index];
