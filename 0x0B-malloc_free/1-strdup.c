@@ -16,14 +16,14 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	for (index = 0; index != '\0'; index++)
+	for (index = 0; str[index] != '\0'; index++)
 		;
-	buffer = malloc(index * sizeof(char) + 1);
+	buffer = malloc((index + 1) * sizeof(char));
 
 	if (buffer == NULL)
 		return (NULL);
 
-	for (index = 0; str[index]; index++)
+	for (index = 0; str[index] != '\0'; index++)
 		buffer[index] = str[index];
 
 	buffer[index] = '\0';
