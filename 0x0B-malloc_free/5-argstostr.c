@@ -2,29 +2,22 @@
 #include <stdlib.h>
 
 /**
- * -
- * @
- * @
- * description:
- * Return:
+ * *argstostr - int ac, char **av
+ * @ac: # of arguments
+ * @av: argument vector
+ * description: function that concatenates all arguments of a program
+ * Return: NULL if fails, ac is 0, av is NULL. Else pointer to new string
  */
-
-int main ()
+char *argstostr(int ac, char **av)
 {
-	return (0);
-}
-#include "holberton.h"
-#include <stdlib.h>
+	char *buffer;
 
-/**
- * -
- * @
- * @
- * description:
- * Return:
- */
+	buffer = malloc(ac * sizeof(char));
 
-int main ()
-{
-	return (0);
+	if (av == NULL || ac == 0)
+	{
+		return (NULL);
+	}
+	else
+		return (buffer);
 }
