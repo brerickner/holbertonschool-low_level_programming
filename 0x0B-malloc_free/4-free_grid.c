@@ -10,8 +10,12 @@
  */
 void free_grid(int **grid, int height)
 {
-	(void)grid;
-	(void)height;
+	int x = 0;
 
-	_putchar('\n');
+	for (x = 0; x < 1; x++)
+
+		free(grid[x]);
+
+	free(grid);
+
 }
