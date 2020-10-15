@@ -13,5 +13,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	(void)nmemb;
 	(void)size;
 
-	_putchar('\n');
+	return (NULL);
 }
