@@ -19,5 +19,5 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 	else
-		return (buffer);
+		return(buffer);
 }

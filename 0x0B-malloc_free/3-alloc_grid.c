@@ -11,10 +11,10 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int ht, w;
 	int **arr;
+	int ht, w;
 
-	if (height <= 0 || width <= 0)
+	if (width <= 0 || height <= 0)
 		return (NULL);
 
 	arr = malloc(sizeof(int *) * height);
