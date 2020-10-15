@@ -9,5 +9,11 @@
  */
 void *malloc_checked(unsigned int b)
 {
-	_putchar('.');
+	int *pointer;
+
+	pointer = malloc(b);
+	if (pointer == NULL)
+		exit(98);
+
+	return (pointer);
 }
