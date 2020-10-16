@@ -8,7 +8,7 @@
  * description: function that returns lenth of string
  * Return: length of string
  */
-int _strlen(char *s)
+unsigned int _strlen(char *s)
 {
 	unsigned int charCount = 0;
 
