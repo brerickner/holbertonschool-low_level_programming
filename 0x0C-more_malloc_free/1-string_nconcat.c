@@ -9,7 +9,7 @@
  * description: function that concatenates two strings.
  * Return: pointer to string dest
  */
-char *_strncat(char *dest, char *src, unsigned int n)
+char *_strncat(char *dest, char *src, unsigned int x)
 {
 	unsigned int i, i2;
 
@@ -17,7 +17,7 @@ char *_strncat(char *dest, char *src, unsigned int n)
 		;
 	for (i = 0; src[i] != '\0'; i++, i2++)
 	{
-		if (i < n)
+		if (i < x)
 			dest[i2] = src[i];
 	}
 	dest[i2] = '\0';
@@ -58,7 +58,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (buffer == NULL)
 		return (NULL);
 
-	buffer = s1 + 1;
+	buffer = s1;
 
 	return (buffer);
 }
