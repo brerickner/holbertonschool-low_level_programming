@@ -1,10 +1,11 @@
 #include "holberton.h"
 #include <stdlib.h>
+
 /**
  * *_strncat - char *dest, char *src, int n
  * @dest: pointer to char string
  * @src: pointer to char string
- * @x: integer
+ * @n: integer
  * description: function that concatenates two strings.
  * Return: pointer to string dest
  */
@@ -51,11 +52,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *buffer;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
 	s1 = _strncat(s1, s2, n);
 
 	buffer = malloc(_strlen(s1));
@@ -64,5 +60,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	buffer = s1;
 
-	return (s1);
+	return (buffer);
 }
