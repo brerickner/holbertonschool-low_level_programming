@@ -2,22 +2,6 @@
 #include <stdlib.h>
 
 /**
- * _strlen - char *s
- * @s: string that is being measured
- *
- * description: function that returns lenth of string
- * Return: length of string
- */
-unsigned int _strlen(char *s)
-{
-	unsigned int charCount = 0;
-
-	while (s[charCount] != '\0')
-		charCount++;
-
-	return (charCount);
-}
-/**
  * *_strncat - char *dest, char *src, int n
  * @dest: pointer to char string
  * @src: pointer to char string
@@ -40,6 +24,22 @@ char *_strncat(char *dest, char *src, unsigned int n)
 	return (dest);
 }
 /**
+ * _strlen - char *s
+ * @s: string that is being measured
+ *
+ * description: function that returns lenth of string
+ * Return: length of string
+ */
+unsigned int _strlen(char *s)
+{
+	unsigned int charCount = 0;
+
+	while (s[charCount] != '\0')
+		charCount++;
+
+	return (charCount);
+}
+/**
  * *string_nconcat - char *s1, char *s2, unsigned int n
  * @s1: pointer to memory that was allocated
  * @s2: string being appended to S1
@@ -52,11 +52,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *buffer;
 
-	buffer = malloc(_strlen(_strncat(s1, s2, n)));
+	s1 = _strncat(s1, s2, n);
+
+	buffer = malloc(_strlen(s1));
 	if (buffer == NULL)
 		return (NULL);
 
-	buffer = _strncat(s1, s2, n);
+	buffer = s1;
 	free(buffer);
 
 	return (s1);
