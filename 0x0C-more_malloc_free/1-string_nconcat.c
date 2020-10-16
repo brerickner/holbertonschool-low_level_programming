@@ -1,7 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-
-char *_strncat(char *dest, char *src, unsigned int x);
 /**
  * *_strncat - char *dest, char *src, int n
  * @dest: pointer to char string
