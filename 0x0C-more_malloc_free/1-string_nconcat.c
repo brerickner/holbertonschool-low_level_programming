@@ -10,7 +10,7 @@
  */
 int _strlen(char *s)
 {
-	int charCount = 0;
+	unsigned int charCount = 0;
 
 	while (s[charCount] != '\0')
 		charCount++;
@@ -25,9 +25,9 @@ int _strlen(char *s)
  * description: function that concatenates two strings.
  * Return: pointer to string dest
  */
-char *_strncat(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, unsigned int n)
 {
-	int i, i2;
+	unsigned int i, i2;
 
 	for (i2 = 0; dest[i2] != '\0'; i2++)
 		;
@@ -48,11 +48,16 @@ char *_strncat(char *dest, char *src, int n)
  * Return: S1 with n bytes of S2 appended plus null terminated. Else NULL if
  * function fails
  */
-char *string_nconcat(char *dest, char *src, unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *buffer;
 
-	buffer = malloc(_strlen(s1, s2, n));
+	buffer = malloc(_strlen(_strncat(s1, s2, n)));
+	if (buffer == NULL)
+		return (NULL);
+
+	buffer = _strncat(s1, s2, n);
+	free(buffer);
 
 	return (s1);
 }
