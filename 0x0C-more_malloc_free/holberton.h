@@ -1,7 +1,7 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
-char *_strncat(char *dest, char *src, int n);
+char *_strncat(char *dest, char *src, unsigned int n);
 int _strlen(char *s);
 int _putchar(char c);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
