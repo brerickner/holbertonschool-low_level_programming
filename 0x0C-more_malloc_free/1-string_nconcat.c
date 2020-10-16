@@ -58,8 +58,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (buffer == NULL)
 		return (NULL);
 
-	buffer = s1;
-	free(buffer);
+	buffer = s1 + 1;
 
-	return (s1);
+	return (buffer);
 }
