@@ -17,8 +17,6 @@ int _strlen(char *s)
 
 	return (charCount);
 }
-#include "holberton.h"
-
 /**
  * *_strncat - char *dest, char *src, int n
  * @dest: pointer to char string
@@ -27,19 +25,19 @@ int _strlen(char *s)
  * description: function that concatenates two strings.
  * Return: pointer to string dest
  */
-char *_strncat(char *s1, char *s2, int n)
+char *_strncat(char *dest, char *src, int n)
 {
 	int i, i2;
 
-	for (i2 = 0; s1[i2] != '\0'; i2++)
+	for (i2 = 0; dest[i2] != '\0'; i2++)
 		;
-	for (i = 0; s2[i] != '\0'; i++, i2++)
+	for (i = 0; src[i] != '\0'; i++, i2++)
 	{
 		if (i < n)
-			s1[i2] = s2[i];
+			dest[i2] = src[i];
 	}
-	s1[i2] = '\0';
-	return (s1);
+	dest[i2] = '\0';
+	return (dest);
 }
 /**
  * *string_nconcat - char *s1, char *s2, unsigned int n
@@ -50,18 +48,11 @@ char *_strncat(char *s1, char *s2, int n)
  * Return: S1 with n bytes of S2 appended plus null terminated. Else NULL if
  * function fails
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+char *string_nconcat(char *dest, char *src, unsigned int n)
 {
 	char *buffer;
-	int len_s1 = _strlen(s1);
-	int len_s2 = _strlen(s2);
 
-	if (len_s1 >= 1 || len_s2 >= 1)
-	{
-		buffer = malloc(len_s1);
-		for (len_s1 = ; buffer[
-	}
+	buffer = malloc(_strlen(s1, s2, n));
 
-	if (
 	return (s1);
 }
