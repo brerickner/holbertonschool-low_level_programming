@@ -1,6 +1,8 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
+char *_strncat(char *s1, char *s2, int n);
+int _strlen(char *s);
 int _putchar(char c);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int *array_range(int min, int max);
