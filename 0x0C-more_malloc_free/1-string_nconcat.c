@@ -5,7 +5,7 @@
  * *_strncat - char *dest, char *src, int n
  * @dest: pointer to char string
  * @src: pointer to char string
- * @n: integer
+ * @x: integer
  * description: function that concatenates two strings.
  * Return: pointer to string dest
  */
