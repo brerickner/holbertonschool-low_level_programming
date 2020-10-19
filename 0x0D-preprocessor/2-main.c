@@ -3,9 +3,7 @@
 #include "holberton.h"
 
 /**
- * main - int argc, char *argv[]
- * @argc: argument count
- * @argv: argument vector
+ * main - void
  * description: program that prints the name of the file it was compiled from
  * followed by a newline
  * Return: 0
