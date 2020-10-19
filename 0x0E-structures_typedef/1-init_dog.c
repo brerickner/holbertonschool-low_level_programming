@@ -13,7 +13,7 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 	struct dog *doggy;
 	int buffer = 1;
 
-	if(buffer)
+	if (buffer)
 	{
 		doggy = d;
 		d = doggy;
