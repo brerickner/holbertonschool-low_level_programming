@@ -10,14 +10,13 @@
  * followed by a newline
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(void)
 {
 	int index = 0;
 
-	if (argc > index)
-	{
-		printf("%s\n", argv[5]);
-		index++;
-	}
+	if (!index)
+
+		printf("%s\n", __FILE__);
+
 	return (0);
 }
