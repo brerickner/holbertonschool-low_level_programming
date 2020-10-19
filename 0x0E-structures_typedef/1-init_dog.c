@@ -11,14 +11,11 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	struct dog *doggy;
-	int buffer = 0;
 
-	doggy = d;
-	if (!buffer)
+	if (d)
 	{
-		doggy->name = name;
-		doggy->age = age;
-		doggy->owner = owner;
+		d->name = name;
+		d->age = age;
+		d->owner = owner;
 	}
 }
