@@ -1,5 +1,15 @@
 #ifndef DOG_H
 #define DOG_H
+
+/**
+ * struct dog - char* name, owner, float age
+ * @name: First member
+ * @age: Second member
+ * @owner: Third member
+ *
+ * Description: defining new type struct dog, with name, age and owner elements
+ */
+
 struct dog
 {
 	char *name;
