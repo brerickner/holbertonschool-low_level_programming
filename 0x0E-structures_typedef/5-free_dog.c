@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * void free_dog(dog_t *d);
- * @d:
+ * free_dog - dog_t *d
+ * @d: dog to be freed
  * description: function that frees dogs
  * Return: void
  */
@@ -11,5 +11,5 @@ void free_dog(dog_t *d)
 {
 	(void)d;
 
-	return (NULL);
+	return;
 }
