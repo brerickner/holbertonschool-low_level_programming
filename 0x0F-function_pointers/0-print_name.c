@@ -1,4 +1,5 @@
 #include "function_pointers.h"
+#define NULL 0
 /**
  * print_name -char *name, void (*f)(char *)
  * @name: pointer to type char
@@ -9,6 +10,10 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
+	if (name == NULL)
+		return;
+	if (f == NULL)
+		return;
+
 	f(name);
-	return;
 }
