@@ -1,6 +1,7 @@
 #include "function_pointers.h"
-#define NULL 0
-/*#define NULL 0 tried defining in function_pointers.h instead*/
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
  * print_name -char *name, void (*f)(char *)
  * @name: pointer to type char
