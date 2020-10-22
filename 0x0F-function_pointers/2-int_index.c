@@ -13,9 +13,16 @@
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	(void)size;
-	(void)array;
-	(void)cmp;
+	int index;
 
-	return (0);
+	if (size <= 0)
+		return (-1);
+	if (cmp == NULL || array == NULL)
+		return (-1);
+	for (index = 0; index < size; ++index)
+	{
+		if (cmp(array[index]) != 0)
+			return (index);
+	}
+	return(-1);
 }
