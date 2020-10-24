@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
-/*
- * void print_numbers - const char *separator, const unsigned int n, ...
+/**
+ * print_numbers - const char *separator, const unsigned int n, ...
  * @separator: comma and space
  * @n: number of arguments
  * description: function that prints numbers, followed by a new line
