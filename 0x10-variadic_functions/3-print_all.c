@@ -2,7 +2,45 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
+/**
+ * char_func - prints char
+ * Return: void
+ */
+void char_func(args_list)
+{
+	printf(%c, va_arg(args_list, char));
+}
 
+/**
+ * float_func - prints float number
+ * Return: void
+ */
+void float_func(args_list)
+{
+	printf(%f, va_arg(args_list, float));
+}
+
+/**
+ * float_func - prints float number
+ * Return: void
+ */
+void int_func(args_list)
+{
+	printf(%i, va_arg(args_list, int));
+}
+/**
+ * string_func - prints float number
+ * Return: void
+ */
+void string_func(args_list)
+{
+	char *string = va_arg(args_list, char *);
+	if (!string)
+	{
+	string = "(nil)";
+	}
+	printf(%s, string));
+}
 /**
  * print_all - print all
  * description: print
@@ -12,38 +50,24 @@
 
 void print_all(const char * const format, ...)
 {
-	va_list pizza_list;
-	int index = 0;
-	char *string = 0;
+	int inner = 0;
+	av_list args_list;
 
-	va_start(pizza_list, format);
+	va_start(args_list, format);
 
-	while (format[index] != '\0')
+	while (format[outer])
 	{
-		switch(format[index])
+		if (format[outer] == print_stuff[inner])
 		{
-		case 'c':
-			printf("%c", va_arg(pizza_list, int));
-			break;
-		case 'i':
-			printf("%i", va_arg(pizza_list, int));
-			break;
-		case 'f':
-			printf("%f", va_arg(pizza_list, double));
-			break;
-		case 's':
-			printf("%s", va_arg(pizza_list, char *));
-			if (string == NULL)
-				printf("(nil)");
-			break;
-		default:
-			break;
+			print_stuff[inner].fun(print_stuff);
+			inner++;
 		}
-		if (format[index + 1] != '\0')
-			printf(", ");
-		index++;
+		outer++;
 	}
-	printf("\n");
-	va_end(pizza_list);
-	return;
+	while (format[outer + 1] != '\0')
+	{
+		printf(", ");
+		outer++;
+	}
+
 }
