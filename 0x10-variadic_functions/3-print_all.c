@@ -6,68 +6,82 @@
  * char_func - prints char
  * Return: void
  */
-void char_func(args_list)
+void char_func(va_list args_list)
 {
-	printf(%c, va_arg(args_list, char));
+	printf("%c", va_arg(args_list, int));
 }
 
 /**
  * float_func - prints float number
  * Return: void
  */
-void float_func(args_list)
+void float_func(va_list args_list)
 {
-	printf(%f, va_arg(args_list, float));
+	printf("%f", va_arg(args_list, double));
 }
 
 /**
  * float_func - prints float number
  * Return: void
  */
-void int_func(args_list)
+void int_func(va_list args_list)
 {
-	printf(%i, va_arg(args_list, int));
+	printf("%i", va_arg(args_list, int));
 }
 /**
  * string_func - prints float number
  * Return: void
  */
-void string_func(args_list)
+void string_func(va_list args_list)
 {
-	char *string = va_arg(args_list, char *);
+	char *string;
+
+	string = va_arg(args_list, char *);
+
 	if (!string)
 	{
-	string = "(nil)";
+		string = "(nil)";
 	}
-	printf(%s, string));
+	printf("%s", string);
 }
 /**
- * print_all - print all
- * description: print
- * @format: format
- * Return: 0
+ * print_all - const char * const format
+ * @format: list of data types passed in as args
+ * description: prints anything and everything
+ * Return: void
  */
 
 void print_all(const char * const format, ...)
 {
 	int inner = 0;
-	av_list args_list;
+	int outer = 0;
+	va_list args_list;
+	char *comma = "";
+	print_stuff arr[] = {
+		{'c', char_func},
+		{'f', float_func},
+		{'i', int_func},
+		{'s', string_func},
+		{'\0', NULL}
+	};
 
 	va_start(args_list, format);
 
-	while (format[outer])
+	while (format[outer] != '\0' && format)
 	{
-		if (format[outer] == print_stuff[inner])
+		inner = 0;
+		while (inner < 4)
 		{
-			print_stuff[inner].fun(print_stuff);
+			if (arr[inner].x == format[outer])
+			{
+				printf("%s", comma);
+				arr[inner].fun(args_list);
+				comma = ", ";
+			}
 			inner++;
 		}
 		outer++;
 	}
-	while (format[outer + 1] != '\0')
-	{
-		printf(", ");
-		outer++;
-	}
-
+	va_end(args_list);
+	printf("\n");
 }
