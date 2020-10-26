@@ -2,6 +2,7 @@
 #define VARIADIC_FUNCTION_H
 #include <stdarg.h>
 #include <stdlib.h>
+
 /**
  * struct print_stuff - struct with char x and pointer function
  * @x: type x
