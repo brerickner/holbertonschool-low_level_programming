@@ -2,11 +2,16 @@
 #define VARIADIC_FUNCTION_H
 #include <stdarg.h>
 #include <stdlib.h>
-#include <stddef.h>
-
+/**
+ * struct print_stuff - struct with char x and pointer function
+ * @x: type x
+ * @fun: pointer to func
+ * description: struct that prints char x matching pointer function
+ */
 typedef struct print_stuff
 {
-	char x;	void (*fun)();
+	char x;
+	void (*fun)();
 } print_stuff;
 
 int sum_them_all(const unsigned int n, ...);
