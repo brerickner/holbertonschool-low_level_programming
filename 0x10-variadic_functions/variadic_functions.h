@@ -13,7 +13,7 @@ typedef struct print_stuff
 {
 	char x;
 	void (*fun)();
-};
+} print_stuff;
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);

@@ -56,6 +56,7 @@ void string_func(va_list args_list)
  */
 void print_all(const char * const format, ...)
 {
+	int outer = 0;
 	int inner = 0;
 	va_list args_list;
 	char *comma = "";
