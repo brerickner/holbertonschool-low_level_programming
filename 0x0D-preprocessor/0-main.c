@@ -1,5 +1,6 @@
+#include "0-object_like_macro.h"
+#include "0-object_like_macro.h"
 #include <stdio.h>
-#include "dog.h"
 
 /**
  * main - check the code for Holberton School students.
@@ -8,11 +9,9 @@
  */
 int main(void)
 {
-	struct dog my_dog;
+	int s;
 
-	my_dog.name = "Django";
-	my_dog.age = 3.5;
-	my_dog.owner = "Bob";
-	print_dog(&my_dog);
+	s = 98 + SIZE;
+	printf("%d\n", s);
 	return (0);
 }

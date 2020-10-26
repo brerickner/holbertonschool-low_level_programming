@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "dog.h"
+#include "4-sum.h"
+#include "4-sum.h"
 
 /**
  * main - check the code for Holberton School students.
@@ -8,11 +9,9 @@
  */
 int main(void)
 {
-	struct dog my_dog;
+	int s;
 
-	my_dog.name = "Django";
-	my_dog.age = 3.5;
-	my_dog.owner = "Bob";
-	print_dog(&my_dog);
+	s = SUM(98, 1024);
+	printf("%d\n", s);
 	return (0);
 }

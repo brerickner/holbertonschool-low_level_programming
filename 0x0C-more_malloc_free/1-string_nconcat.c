@@ -2,44 +2,6 @@
 #include <stdlib.h>
 
 /**
- * *_strncat - char *dest, char *src, int n
- * @dest: pointer to char string
- * @src: pointer to char string
- * @x: integer
- * description: function that concatenates two strings.
- * Return: pointer to string dest
- */
-char *_strncat(char *dest, char *src, unsigned int x)
-{
-	unsigned int i, i2;
-
-	for (i2 = 0; dest[i2] != '\0'; i2++)
-		;
-	for (i = 0; src[i] != '\0'; i++, i2++)
-	{
-		if (i < x)
-			dest[i2] = src[i];
-	}
-	dest[i2] = '\0';
-	return (dest);
-}
-/**
- * _strlen - char *s
- * @s: string that is being measured
- *
- * description: function that returns lenth of string
- * Return: length of string
- */
-unsigned int _strlen(char *s)
-{
-	unsigned int charCount = 0;
-
-	while (s[charCount] != '\0')
-		charCount++;
-
-	return (charCount);
-}
-/**
  * *string_nconcat - char *s1, char *s2, unsigned int n
  * @s1: pointer to memory that was allocated
  * @s2: string being appended to S1
@@ -51,14 +13,27 @@ unsigned int _strlen(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *buffer;
+	unsigned int len_s1, len_s2;
 
-	s1 = _strncat(s1, s2, n);
+	if (s1 == NULL)
+		s1 = "";
 
-	buffer = malloc(_strlen(s1));
+	if (s2 == NULL)
+		s2 = "";
+
+	for (len_s1 = 0; s1[len_s1]; len_s1++)
+		;
+	for (len_s2 = 0; s2[len_s2]; len_s2++)
+	{
+		if (n >= len_s2)
+			n = len_s2;
+	}
+	buffer = malloc(sizeof(char) * len_s1 + n + 1);
 	if (buffer == NULL)
 		return (NULL);
 
-	buffer = s1;
+	buffer[len_s2] = s2[len_s1];
 
+	buffer[len_s2] = '\0';
 	return (buffer);
 }
