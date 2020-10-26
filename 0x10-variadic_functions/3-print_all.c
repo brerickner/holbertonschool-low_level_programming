@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
+#include <stddef.h>
 /**
  * char_func - prints char
  * @args_list: argument list
@@ -70,7 +71,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args_list, format);
 
-	while (format[outer] != '\0' && format)
+	while (format[outer] && format)
 	{
 		while (inner < 4)
 		{
