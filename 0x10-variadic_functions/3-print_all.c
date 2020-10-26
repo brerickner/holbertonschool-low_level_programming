@@ -71,7 +71,7 @@ void print_all(const char * const format, ...)
 
 	va_start(args_list, format);
 
-	while (format[outer] && format)
+	while (format && format[outer])
 	{
 		while (inner < 4)
 		{
@@ -86,6 +86,6 @@ void print_all(const char * const format, ...)
 		inner = 0;
 		outer++;
 	}
-	va_end(args_list);
 	printf("\n");
+	va_end(args_list);
 }
