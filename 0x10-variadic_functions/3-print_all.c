@@ -4,6 +4,7 @@
 #include <stdio.h>
 /**
  * char_func - prints char
+ * @args_list: argument list
  * Return: void
  */
 void char_func(va_list args_list)
@@ -13,6 +14,7 @@ void char_func(va_list args_list)
 
 /**
  * float_func - prints float number
+ * @args_list: argument list
  * Return: void
  */
 void float_func(va_list args_list)
@@ -21,7 +23,8 @@ void float_func(va_list args_list)
 }
 
 /**
- * float_func - prints float number
+ * int_func - prints float number
+ * @args_list: argument list
  * Return: void
  */
 void int_func(va_list args_list)
@@ -30,6 +33,7 @@ void int_func(va_list args_list)
 }
 /**
  * string_func - prints float number
+ * @args_list: argument list
  * Return: void
  */
 void string_func(va_list args_list)
@@ -57,13 +61,19 @@ void print_all(const char * const format, ...)
 	int outer = 0;
 	va_list args_list;
 	char *comma = "";
-	print_stuff arr[] = {
-		{'c', char_func},
-		{'f', float_func},
-		{'i', int_func},
-		{'s', string_func},
-		{'\0', NULL}
-	};
+/**
+ * print_stuff - **arr
+ * @arr: array of structs
+ * description: array of structs to perform function matching matching char x
+ */
+	print_stuff arr[] =
+		{
+			{'c', char_func},
+			{'f', float_func},
+			{'i', int_func},
+			{'s', string_func},
+			{'\0', NULL}
+		};
 
 	va_start(args_list, format);
 

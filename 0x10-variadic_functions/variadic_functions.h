@@ -2,6 +2,12 @@
 #define VARIADIC_FUNCTION_H
 #include <stdarg.h>
 #include <stdlib.h>
+#include <stddef.h>
+
+typedef struct print_stuff
+{
+	char x;	void (*fun)();
+} print_stuff;
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
@@ -11,11 +17,5 @@ void char_func(va_list args_list);
 void string_func(va_list args_list);
 void int_func(va_list args_list);
 void string_func(va_list args_list);
-
-typedef struct c_type
-{
-	char c;
-	void(*fun)();
-} print_stuff;
 
 #endif /* VARIADIC_FUNCTION_H */
