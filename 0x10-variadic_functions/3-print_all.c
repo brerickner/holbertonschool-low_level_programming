@@ -54,26 +54,18 @@ void string_func(va_list args_list)
  * description: prints anything and everything
  * Return: void
  */
-
 void print_all(const char * const format, ...)
 {
 	int inner = 0;
-	int outer = 0;
 	va_list args_list;
 	char *comma = "";
-/**
- * print_stuff - **arr
- * @arr: array of structs
- * description: array of structs to perform function matching matching char x
- */
-	print_stuff arr[] =
-		{
-			{'c', char_func},
-			{'f', float_func},
-			{'i', int_func},
-			{'s', string_func},
-			{'\0', NULL}
-		};
+	print_stuff arr[] = {
+		{'c', char_func},
+		{'f', float_func},
+		{'i', int_func},
+		{'s', string_func},
+		{'\0', NULL}
+	};
 
 	va_start(args_list, format);
 
