@@ -72,7 +72,6 @@ void print_all(const char * const format, ...)
 
 	while (format[outer] != '\0' && format)
 	{
-		inner = 0;
 		while (inner < 4)
 		{
 			if (arr[inner].x == format[outer])
@@ -83,6 +82,7 @@ void print_all(const char * const format, ...)
 			}
 			inner++;
 		}
+		inner = 0;
 		outer++;
 	}
 	va_end(args_list);
