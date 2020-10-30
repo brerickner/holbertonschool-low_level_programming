@@ -11,7 +11,7 @@
 size_t print_list(const list_t *h)
 {
 	unsigned int nodes;
-	while (h != NULL || h->next != NULL)
+	while (h != NULL)
 	{
 		if (h->str == NULL)
 			printf("[%i] %s", 0, "(nil)");
