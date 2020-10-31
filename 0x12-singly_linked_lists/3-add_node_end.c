@@ -38,7 +38,7 @@ int _strlen(char *s)
 	return (charCount);
 }
 /**
- * *add_node_end(list_t **head, const char *str)
+ * *add_node_end -list_t **head, const char *str
  * @head: pointer to start of linked list
  * @str: pointer to string to be added as first node
  * description: function that adds a new node to end of list_t
