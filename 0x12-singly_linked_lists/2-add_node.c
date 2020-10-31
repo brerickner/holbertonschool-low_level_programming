@@ -5,14 +5,18 @@
 
 /**
  * *create_node - list_t *head
- * @head: pointer to new node
+ * @new_node: pointer to new node
  * description: function that creates a new node
  * Return: ptr to the node created
  */
 list_t *create_node(list_t *new_node)
 {
-	if ((new_node = (list_t *)malloc(sizeof(list_t))) == NULL)
-		printf("[0] (nil)\n");
+
+	new_node = (list_t *)malloc(sizeof(list_t));
+	if (new_node == NULL)
+		return (NULL);
+
+	printf("[0] (nil)\n");
 	new_node->next = NULL;
 	new_node->len = 0;
 	return (new_node);
@@ -30,7 +34,7 @@ int _strlen(char *s)
 	int charCount = 0;
 
 	while (s[charCount])
-	       charCount++;
+		charCount++;
 	return (charCount);
 }
 /**
@@ -47,9 +51,9 @@ list_t *add_node(list_t **head, const char *str)
 
 	add = create_node(*head);
 	add->str = strdup(str);
-	if(add->str == NULL)
-		return(NULL);
+	if (add->str == NULL)
+		return (NULL);
 	add->len = _strlen(add->str);
 	add->next = *head;
-	return(add);
+	return (add);
 }
