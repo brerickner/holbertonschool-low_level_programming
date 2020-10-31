@@ -1,5 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
  * *create_node - list_t *head
@@ -7,13 +9,12 @@
  * description: function that creates a new node
  * Return: ptr to the node created
  */
-list_t create_node(list_t *new_node)
+list_t *create_node(list_t *new_node)
 {
-	if ((new_node=(list_t *head)malloc(sizeof(list_t))) == NULL)
+	if ((new_node = (list_t *)malloc(sizeof(list_t))) == NULL)
 		printf("[0] (nil)\n");
 	new_node->next = NULL;
 	new_node->len = 0;
-
 	return (new_node);
 }
 /**
@@ -28,9 +29,8 @@ int _strlen(char *s)
 {
 	int charCount = 0;
 
-	while (s[charCount)
+	while (s[charCount])
 	       charCount++;
-
 	return (charCount);
 }
 /**
@@ -46,10 +46,10 @@ list_t *add_node(list_t **head, const char *str)
 	list_t *add;
 
 	add = create_node(*head);
-
 	add->str = strdup(str);
-	add->len = _strlen(s);
-if(str == NULL)
-	{
+	if(add->str == NULL)
 		return(NULL);
-	}
+	add->len = _strlen(add->str);
+	add->next = *head;
+	return(add);
+}
