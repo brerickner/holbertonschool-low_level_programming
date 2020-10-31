@@ -52,10 +52,12 @@ list_t *add_node(list_t **head, const char *str)
 	add = create_node(*head);
 	if (str == NULL)
 		return (NULL);
-	else
+
 	add->str = strdup(str);
 	add->len = _strlen(str);
 	add->next = *head;
+
+	*head = add;
 
 	return (add);
 }
