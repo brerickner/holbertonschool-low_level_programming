@@ -15,10 +15,6 @@ list_t *create_node(list_t *new_node)
 	new_node = (list_t *)malloc(sizeof(list_t));
 	if (new_node == NULL)
 		return (NULL);
-
-
-	new_node->next = NULL;
-	new_node->len = 0;
 	return (new_node);
 }
 /**
