@@ -50,7 +50,10 @@ list_t *add_node(list_t **head, const char *str)
 
 	add = create_node(*head);
 	if (buffer == NULL)
+	{
+		free(buffer);
 		return (NULL);
+	}
 
 	add->str = buffer;
 	add->len = _strlen(buffer);
