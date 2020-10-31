@@ -16,9 +16,6 @@ list_t *create_node(list_t *new_node)
 	if (new_node == NULL)
 		return (NULL);
 
-	printf("[0] (nil)\n");
-	new_node->next = NULL;
-	new_node->len = 0;
 	return (new_node);
 }
 /**
@@ -29,7 +26,7 @@ list_t *create_node(list_t *new_node)
  * Return: length of string
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int charCount = 0;
 
@@ -47,12 +44,21 @@ int _strlen(char *s)
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *add;
+	char *buffer;
+
+	buffer = strdup(str);
 
 	add = create_node(*head);
-	add->str = strdup(str);
-	if (add->str == NULL)
+	if (buffer == NULL)
+	{
+		free(buffer);
 		return (NULL);
-	add->len = _strlen(add->str);
-	add->next = *head;
-	return (add);
+	}
+	add->str = buffer;
+	add->len = _strlen(buffer);
+	add->next = NULL;
+
+	*head = add;
+
+	return (*head);
 }
