@@ -44,19 +44,30 @@ int _strlen(const char *s)
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *add;
-	char *buffer;
-
-	buffer = strdup(str);
 
 	add = create_node(*head);
-	if (buffer == NULL)
-	{
-		free(buffer);
+
+	if (add == NULL)
 		return (NULL);
+
+	if (str == NULL)
+	{
+		add->str = NULL;
+		add->len = 0;
+	}
+	else
+	{
+		add->str = strdup(str);
+
+		if (add->str == NULL)
+		{
+			free(add);
+			return (NULL);
+		}
+		add->len = _strlen(str);
+
 	}
 
-	add->str = buffer;
-	add->len = _strlen(buffer);
 	add->next = *head;
 
 	*head = add;
