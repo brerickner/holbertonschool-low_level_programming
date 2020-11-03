@@ -3,7 +3,7 @@
 
 /**
  * void free_listint2 - listint_t **head
- * @h: pointer to node in listint_h
+ * @head: pointer to node in listint_h
  * description: function that frees a listint_t list
  * Return: void
  */
