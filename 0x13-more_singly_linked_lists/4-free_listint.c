@@ -4,7 +4,7 @@
 /**
  * void free_listint - listint_t *head
  * @h: pointer to node in listint_h
- * definition: function that frees a listint_t list
+ * description: function that frees a listint_t list
  * Return: void
  */
 void free_listint(listint_t *head)
