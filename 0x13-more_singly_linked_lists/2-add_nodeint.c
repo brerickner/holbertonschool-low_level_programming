@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * listint_t *add_nodeint - listint_t **head, const int n
+ * *add_nodeint - listint_t **head, const int n
  * @head: pointer to node in listint_h
  * @n: integer stored
  * description: function that adds a new node at beginning of listint_t
@@ -13,5 +13,5 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	(void)head;
 	(void)n;
 
-	return(0);
+	return (0);
 }
