@@ -1,6 +1,6 @@
 #include "lists.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
  * listint_len - const listint_t *h
  * @h: pointer to node in listint_h
@@ -9,7 +9,10 @@
  */
 size_t listint_len(const listint_t *h)
 {
-	(void)h;
+	size_t nodes;
 
-	return (0);
+	for (nodes = 0; h != NULL; h = h->next, nodes++)
+		;
+
+	return (nodes);
 }
