@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * int pop_listint - listint_t **head
+ * pop_listint - listint_t **head
  * @head: pointer to node in listint_h
  * description: function that deletes the head node of lintint_t and returns
  * the head nodes data(n)
@@ -12,5 +12,5 @@ int pop_listint(listint_t **head)
 {
 	(void)head;
 
-	return(0);
+	return (0);
 }
