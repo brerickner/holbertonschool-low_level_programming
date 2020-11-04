@@ -19,7 +19,7 @@ int pop_listint(listint_t **head)
 		for (buffer = *head; buffer != NULL; buffer = *head)
 		{
 			buffer = (*head)->next;
-			RETURN = buffer->n;
+			RETURN = (*head)->n;
 			break;
 		}
 		*head = buffer;
