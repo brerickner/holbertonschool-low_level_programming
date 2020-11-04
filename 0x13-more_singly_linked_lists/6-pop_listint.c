@@ -13,13 +13,17 @@ int pop_listint(listint_t **head)
 	int RETURN;
 
 	if (*head == NULL)
+	{
 		RETURN = 0;
+		return (RETURN);
+	}
 	else
 	{
 		for (buffer = *head; buffer != NULL; buffer = *head)
 		{
 			buffer = (*head)->next;
 			RETURN = (*head)->n;
+			free(*head);
 			break;
 		}
 		*head = buffer;
