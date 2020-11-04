@@ -3,13 +3,16 @@
 
 /**
  * free_listint - listint_t *head
- * @head: pointer to node in listint_h
- * description: function that frees a listint_t list
+ * @head: pointer to head node in listint_h
+ * description: function that points to head of listint_t list and frees it
  * Return: void
  */
 void free_listint(listint_t *head)
 {
-	(void)head;
+	listint_t *buffer;
 
-	return (0);
+	for (buffer = head; buffer != NULL; buffer = head->next)
+	{
+		free(head);
+	}
 }
