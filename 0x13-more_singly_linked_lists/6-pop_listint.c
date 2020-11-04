@@ -1,5 +1,6 @@
 #include "lists.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * pop_listint - listint_t **head
  * @head: pointer to node in listint_h
