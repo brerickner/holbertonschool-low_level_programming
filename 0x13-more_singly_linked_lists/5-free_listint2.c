@@ -11,6 +11,9 @@ void free_listint2(listint_t **head)
 {
 	listint_t *buffer;
 
+	if (head == NULL)
+		return;
+
 	for (buffer = *head; buffer != NULL; buffer = *head)
 	{
 		buffer = (*head)->next;
