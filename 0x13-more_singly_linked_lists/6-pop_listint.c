@@ -1,6 +1,5 @@
 #include "lists.h"
 #include <stdio.h>
-
 /**
  * pop_listint - listint_t **head
  * @head: pointer to node in listint_h
@@ -10,7 +9,22 @@
  */
 int pop_listint(listint_t **head)
 {
-	(void)head;
+	listint_t *buffer;
+	int RETURN;
 
-	return (0);
+	if (*head == NULL)
+		RETURN = 0;
+
+	else
+	{
+		for (buffer = *head; buffer != NULL; buffer = *head)
+		{
+			buffer = (*head)->next;
+			free(*head);
+			RETURN = (*head)->n;
+			break;
+		}
+
+	}
+	return (RETURN);
 }
