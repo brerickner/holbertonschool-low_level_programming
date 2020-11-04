@@ -11,13 +11,13 @@
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 
-
-	for (index = 0; index; index++)
+/*loop through link list*/
+	for (index = 0; head; index++)
 	{
-		if (!head)
-			return (NULL);
-
-		index = head->n;
+		if (index == head->n)/*if equal to index return current node*/
+			return (head);
+/*change current pointer to next of current*/
+		head = head->next;
 	}
-	return (index);
+	return (NULL); /*when head == NULL*/
 }
