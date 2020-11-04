@@ -27,18 +27,20 @@ listint_t *create_node(listint_t *new_node)
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *add_new_node;
+	listint_t *addNode;
 
-	add_new_node = create_node(*head);
+	addNode = create_node(*head);
 
 	if (*head == NULL)
-		*head = add_new_node;
+		*head = addNode;
 	else
-		for (add_new_node = *head; add_new_node->next != NULL;
-		     add_new_node = add_new_node->next)
-			;
-	add_new_node->n = n;
-	add_new_node->next = add_new_node;
+	{
+		for (pointy = *head; pointy->next != NULL;)
+			pointy=pointy->next;
+		; /*find last node in list */
+		pointy->next = addNode; /*point to last node in list */
+	}
+	addNode->n = n;
 
-	return (add_new_node);
+	return (addNode)
 }
