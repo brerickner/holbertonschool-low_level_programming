@@ -11,10 +11,10 @@ listint_t *create_node(listint_t *new_node)
 {
 
 	new_node = (listint_t *)malloc(sizeof(listint_t));
-	if (new_node == NULL)
+	if (new_node == NULL) /* malloc check */
 		return (NULL);
-	new_node->next = NULL;
-	new_node->n = 0;
+	new_node->next = NULL; /* next ptr to NULL*/
+	new_node->n = 0; /* initialize */
 
 	return (new_node);
 }
@@ -27,12 +27,18 @@ listint_t *create_node(listint_t *new_node)
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *add;
+	listint_t *add_new_node;
 
-	add = create_node(*head);
+	add_new_node = create_node(*head);
 
-	add->n = n;
-	add->next = NULL;
+	if (*head == NULL)
+		*head = add_new_node;
+	else
+		for (add_new_node = *head; add_new_node->next != NULL;
+		     add_new_node = add_new_node->next)
+			;
+	add_new_node->n = n;
+	add_new_node->next = add_new_node;
 
-	return (add);
+	return (add_new_node);
 }
