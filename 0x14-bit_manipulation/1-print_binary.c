@@ -1,4 +1,4 @@
-#include "holberton.h"
+B#include "holberton.h"
 /**
  * print_binary - unsigned long int n
  * @n: number to convert to binary
@@ -9,5 +9,4 @@
 void print_binary(unsigned long int n)
 {
 	(void)n;
-	return;
 }
