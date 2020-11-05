@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 /**
  * listint_t *get_nodeint_at_index - listint_t *head, unsigned int index
  * @head: pointer to head node in listint_h
@@ -13,7 +14,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	unsigned int countNodes;
 
 /*loop through link list counting nodes*/
-	for (countNodes = 0; (index - 1) > countNodes;
+	for (countNodes = 0; index > countNodes;
 	     head = head->next, countNodes++)
 	{
 		if (!head)
