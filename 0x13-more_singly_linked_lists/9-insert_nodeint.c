@@ -38,7 +38,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	new_insert = get_nodeint_at_index(*head, idx);
 
-	if (!new_insert || !head)
+	if (!new_insert || !(*head))
 		return (NULL);
 
 	add = create_node(*head);
