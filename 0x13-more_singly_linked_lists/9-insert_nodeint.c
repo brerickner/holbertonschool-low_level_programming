@@ -13,7 +13,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	unsigned int countNodes;
 
 /*loop through link list counting nodes*/
-	for (countNodes = 0; index > countNodes;
+	for (countNodes = 0; (index - 1) > countNodes;
 	     head = head->next, countNodes++)
 	{
 		if (!head)
@@ -36,10 +36,15 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *new_insert, *add;
 
-
 	new_insert = get_nodeint_at_index(*head, idx);
-	add = add_nodeint_end(&new_insert, n);
-	add = new_insert->next;
+
+	if (!new_insert)
+		return (NULL);
+
+	add = create_node(*head);
+	add->next = new_insert->next;
+	new_insert->next = add;
+	add->n = n;
 	*head = (*head)->next;
 
 	return (add);
