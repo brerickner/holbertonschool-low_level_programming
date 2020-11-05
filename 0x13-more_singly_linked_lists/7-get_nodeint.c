@@ -13,12 +13,13 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	unsigned int countNodes;
 
 /*loop through link list counting nodes*/
-	for (countNodes = 0; index > countNodes; countNodes++)
+	for (countNodes = 0; index > countNodes;
+	     head = head->next, countNodes++)
 	{
 		if (!head)
 			return (NULL);
 		/*change current head pointer to next of head*/
-		head = head->next;
+
 	}
 	return (head);/*if equal to index return head node*/
 }
