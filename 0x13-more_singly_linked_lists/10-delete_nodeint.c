@@ -42,6 +42,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	add = create_node(*head);
 	add->next = (*head)->next;
 	*head = (*head)->next;
-	free(add);
+
 	return (1);
 }
