@@ -1,5 +1,28 @@
 #include "lists.h"
 #include <stdio.h>
+#include <stdlib.h>
+/**
+ * listint_t *get_nodeint_at_index - listint_t *head, unsigned int index
+ * @head: pointer to head node in listint_h
+ * @index: index of nodes in listint_t, starting at 0
+ * description: function that returns the nth node of a listint_t linked list
+ * Return: nth node of linked list. Else NULL if node does not exist
+ */
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
+{
+	unsigned int countNodes;
+
+/*loop through link list counting nodes*/
+	for (countNodes = 0; index > countNodes;
+	     head = head->next, countNodes++)
+	{
+		if (!head)
+			return (NULL);
+		/*change current head pointer to next of head*/
+
+	}
+	return (head);/*if equal to index return head node*/
+}
 
 /**
  * *insert_nodeint_at_index - listint_t **head, unsigned int idx, int n
@@ -11,9 +34,13 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	(void)head;
-	(void)idx;
-	(void)n;
+	listint_t *new_insert, *add;
 
-	return (0);
+
+	new_insert = get_nodeint_at_index(*head, idx);
+	add = add_nodeint_end(&new_insert, n);
+	add = new_insert->next;
+	*head = (*head)->next;
+
+	return (add);
 }
