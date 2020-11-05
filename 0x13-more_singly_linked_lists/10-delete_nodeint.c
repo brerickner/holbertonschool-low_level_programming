@@ -10,9 +10,16 @@
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	(void)head;
-	(void)idx;
+	listint_t *new_insert, *add;
 
+	new_insert = get_nodeint_at_index(*head, idx);
 
-	return (0);
+	if (!new_insert || !(*head))
+		return (NULL);
+
+	add = create_node(*head);
+	add->next = (*head)->next;
+	*head = (*head)->next;
+
+	return (1);
 }
