@@ -11,5 +11,5 @@ void print_binary(unsigned long int n)
 	unsigned int index;
 
 	for (index = 1 << 15; index > 0; index /= 2)
-		(n & index) ? _putchar('1'): _putchar('0');
+		(n & index) ? _putchar('1') : _putchar('0');
 }
