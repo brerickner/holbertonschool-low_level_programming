@@ -1,4 +1,4 @@
-B#include "holberton.h"
+#include "holberton.h"
 /**
  * print_binary - unsigned long int n
  * @n: number to convert to binary
@@ -8,5 +8,8 @@ B#include "holberton.h"
 
 void print_binary(unsigned long int n)
 {
-	(void)n;
+	unsigned int index;
+
+	for (index = 1 << 15; index > 0; index /= 2)
+		(n & index) ? _putchar('1'): _putchar('0');
 }
