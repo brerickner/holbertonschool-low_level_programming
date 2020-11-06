@@ -1,4 +1,6 @@
 #include "holberton.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
  * binary_to_uint - const char *b
  * @b: string of 0 and 1 chars
@@ -8,25 +10,30 @@
 unsigned int binary_to_uint(const char *b)
 {
 	int index;
-	unsigned int num;
+	unsigned int num = 0;
 
 	if (!b)
 		return (0);
+
 	for (index = 0; b[index]; index++)
 		;
+
+	index -=  1; /*minus null byte*/
+
 	while (index >= 0)
 	{
-		if (b[index] != 48 && b[index] != 49)
+		if (b[index] != '0' && b[index] != '1')
 			return (0);
-		if (b[index] == 48)
+
+		if (b[index] == '0')
 		{
-			index--;
 			num += (0 << index);
+			break;
 		}
-		if (b[index] == 49)
+		if (b[index] == '1')
 		{
-			index--;
-			num += (0 << index);
+			num += (1 << index);
+			break;
 		}
 	}
 	return (num);
