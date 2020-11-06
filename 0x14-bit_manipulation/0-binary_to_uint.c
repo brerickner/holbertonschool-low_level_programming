@@ -18,17 +18,14 @@ unsigned int binary_to_uint(const char *b)
 	for (index = 0; b[index]; index++)
 		;
 
-	for (index -= 1; index > 0; index--)
+	for (index -= 1; index >= 0; index--)
 	{
-		if (b[index] != 48 && b[index] != 49)
+		if (b[index] != 49 && b[index] != 48)
 			return (0);
-
 		if (b[index] == '0')
-			num = (0 << index);
-
+			num += (0 << index);
 		if (b[index] == '1')
-			num = (1 << index);
+			num += (1 << index);
 	}
-	num += num;
 	return (num);
 }
