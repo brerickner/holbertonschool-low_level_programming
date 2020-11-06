@@ -16,5 +16,6 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	for (bitFlips = 0; changedBits > 0; bitFlips += (changedBits & 1),
 		     changedBits = changedBits >> 1)
-		return (bitFlips);
+		;
+	return (bitFlips);
 }
