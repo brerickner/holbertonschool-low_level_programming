@@ -1,9 +1,10 @@
 #include "holberton.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include <fonts1.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <fcntl.h>
+
 /**
  *  read_textfile - const char *filename, size_t letters
  * @filename: text file to be read
@@ -19,11 +20,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	buffer = malloc(letters * (char)sizeof);
+	buffer = malloc(letters * sizeof(char));
 	if (buffer == NULL)
 		return (0);
 
-	theFile = open(filename, 0_RDONLY);
+	theFile = open(filename, O_RDONLY);
 	if (theFile == -1)
 		return (0);
 
