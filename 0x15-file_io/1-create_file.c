@@ -31,13 +31,10 @@ int create_file(const char *filename, char *text_content)
 	int theFile, writeFile, strLen;
 
 
-	strLen = _strlen(text_content);
 	if (filename == NULL)
 		return (-1);
-	if (!text_content)
-	{
-		open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	}
+	if (text_content != NULL)
+		strLen = _strlen(text_content);
 	theFile = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	if (theFile == -1)
 		return (-1);
