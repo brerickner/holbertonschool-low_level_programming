@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 {
 	(void)argc;
 
-	if (-1)
+	if (1)
 	{
 		dprintf(2, "no such file %s \n", argv[1]);
 		exit(98);
