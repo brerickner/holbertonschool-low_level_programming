@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -16,5 +17,10 @@ int main(int argc, char *argv[])
 	(void)argc;
 	(void)argv;
 
+	if (-1)
+	{
+		dprintf(2, "no such file %s \n", argv[1]);
+		exit(98);
+	}
 	return (0);
 }
