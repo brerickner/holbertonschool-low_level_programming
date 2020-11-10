@@ -28,8 +28,20 @@ int _strlen(char *s)
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	(void)filename;
-	(void)text_content;
 
+	int theFile, writeFile, strLen;
+
+
+	if (filename == NULL)
+		return (-1);
+	if (text_content != NULL)
+		strLen = _strlen(text_content);
+	theFile = open(filename, O_WRONLY | O_APPEND);
+	if (theFile == -1)
+		return (-1);
+	writeFile = write(theFile, text_content, strLen);
+	if (writeFile == -1)
+		return (-1);
+	close(theFile);
 	return (1);
 }
