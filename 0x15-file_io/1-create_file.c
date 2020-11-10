@@ -34,15 +34,16 @@ int create_file(const char *filename, char *text_content)
 	strLen = _strlen(text_content);
 	if (filename == NULL)
 		return (-1);
-	if (strLen)
+	if (!text_content)
 	{
-		theFile = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-		if (theFile == -1)
-			return (-1);
-		writeFile = write(theFile, text_content, strLen);
-		if (writeFile == -1)
-			return (-1);
+		open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 	}
+	theFile = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	if (theFile == -1)
+		return (-1);
+	writeFile = write(theFile, text_content, strLen);
+	if (writeFile == -1)
+		return (-1);
 	close(theFile);
 	return (1);
 }
