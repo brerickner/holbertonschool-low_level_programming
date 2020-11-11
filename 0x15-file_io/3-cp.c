@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit (97);
+		exit(97);
 	}
 	theFile = open(argv[1], O_RDWR);
 	if (theFile == -1)
@@ -46,12 +46,14 @@ int main(int argc, char *argv[])
 		return (error_func(100, theFile, argv[1]));
 	closingTime = close(theLastFile);
 	if (closingTime == -1)
-		return (error_func(101,theLastFile, argv[2]));
+		return (error_func(101, theLastFile, argv[2]));
 	return (0);
 }
 /**
  * error_func - int error
  * @error: error to print
+ * @fileD: file descriptor
+ * @theArgV: the argument vector
  * description: function with error messages
  * Return: the error number
  */
