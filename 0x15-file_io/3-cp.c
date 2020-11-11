@@ -62,22 +62,22 @@ int error_func(int error, int fileD, char *theArgV)
 	if (error == 98)
 	{
 		dprintf(STDERR_FILENO, "Can't read from file %s\n", theArgV);
-		return (98);
+		exit(98);
 	}
 	if (error == 99)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", theArgV);
-		return (99);
+		exit(99);
 	}
 	if (error == 100)
 	{
 		dprintf(STDERR_FILENO, "Can't close %i\n", fileD);
-		return (100);
+		exit(100);
 	}
 	if (error == 101)
 	{
 		dprintf(STDERR_FILENO, "Can't close %i\n", fileD);
-		return (100);
+		exit(100);
 	}
 	return (0);
 }
