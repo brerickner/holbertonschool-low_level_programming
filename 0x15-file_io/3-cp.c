@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		error_func(98, theFile, argv[1]);
 	readFile = read(theFile, buffer, 1024);
 	if (readFile == -1)
-		error_func(99, readFile, argv[1]);
+		error_func(98, readFile, argv[1]);
 	theLastFile = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (theLastFile == -1)
 		error_func(99, theLastFile, argv[2]);
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 			error_func(99, writeFile, argv[2]);
 		readFile = read(theFile, buffer, 1024);
 		if (readFile == -1)
-			error_func(98, readFile, argv[2]);
+			error_func(98, readFile, argv[1]);
 	}
 	closingTime = close(theFile);
 	if (closingTime == -1)
@@ -61,7 +61,7 @@ int error_func(int error, int fileD, char *theArgV)
 {
 	if (error == 98)
 	{
-		dprintf(STDERR_FILENO, "Can't read from file %s\n", theArgV);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", theArgV);
 		exit(98);
 	}
 	if (error == 99)
@@ -71,12 +71,12 @@ int error_func(int error, int fileD, char *theArgV)
 	}
 	if (error == 100)
 	{
-		dprintf(STDERR_FILENO, "Can't close %i\n", fileD);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fileD);
 		exit(100);
 	}
 	if (error == 101)
 	{
-		dprintf(STDERR_FILENO, "Can't close %i\n", fileD);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fileD);
 		exit(100);
 	}
 	return (0);
