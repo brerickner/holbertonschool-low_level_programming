@@ -4,6 +4,7 @@
 /**
  * *create_node - dlistint_t *new_node
  * @new_node: pointer to new node
+ * @n: value in node
  * description: function that creates a new node
  * Return: ptr to the node created
  */
