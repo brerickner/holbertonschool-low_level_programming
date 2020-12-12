@@ -11,9 +11,13 @@ void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *buffer;
 
-	for (buffer = head; buffer != NULL; head = buffer)
+	if (head == NULL)
+		return;
+
+	for (buffer = head; buffer != NULL; buffer = head)
 	{
 		buffer = head->next;
 		free(head);
+		head = buffer;
 	}
 }
