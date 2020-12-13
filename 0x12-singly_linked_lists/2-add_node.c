@@ -13,7 +13,7 @@ list_t *create_node(list_t *new_node)
 {
 
 	new_node = (list_t *)malloc(sizeof(list_t));
-	if (new_node == NULL)
+	if (!new_node)
 		return (NULL);
 	return (new_node);
 }
@@ -47,7 +47,7 @@ list_t *add_node(list_t **head, const char *str)
 
 	add = create_node(*head);
 
-	if (add == NULL)
+	if (!add || !head)
 		return (NULL);
 
 	if (str == NULL)
