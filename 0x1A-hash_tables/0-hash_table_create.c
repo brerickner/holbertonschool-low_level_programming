@@ -12,19 +12,19 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_table_t *newHash = NULL;
 
 	newHash = malloc(sizeof(hash_table_t));
-   	if (!newHash)
-        {
-                return (NULL);
-        }
-        newHash->size = size;
-        newHash->array = malloc(sizeof(hash_table_t *) * size);
-        if (!newHash->array)
-        {
-                free(newHash);
-                return (NULL);
-        }
-        /* make all entries empty by setting each pointer to point to NULL */
-        for (index = 0; index < size; index++, newHash->array[index] = NULL)
+	if (!newHash)
+	{
+		return (NULL);
+	}
+	newHash->size = size;
+	newHash->array = malloc(sizeof(hash_table_t *) * size);
+	if (!newHash->array)
+	{
+		free(newHash);
+		return (NULL);
+	}
+	/* make all entries empty by setting each pointer to point to NULL */
+	for (index = 0; index < size; index++, newHash->array[index] = NULL)
 		;
-        return (newHash);
+	return (newHash);
 }
