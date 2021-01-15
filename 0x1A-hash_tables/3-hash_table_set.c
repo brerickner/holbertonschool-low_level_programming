@@ -18,7 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* use hash function to get new key index*/
 	index = key_index((unsigned char *)key, ht->size);
 	/* go through adding or updating key/value pair in index location */
-	while (ht->array[index])
+	for (; ht->array[index]; index++)
 	{
 	/* if keys match get rid of what's in there and replace with new Value */
 		if (strcmp(ht->array[index]->key, key) == 0)
@@ -45,6 +45,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	newNode->value = strdup(value);
 	if (!newNode->value)
 		return (0);
-	;
+	ht->array[index] = newNode;
 	return (1);
 }
