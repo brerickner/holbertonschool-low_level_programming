@@ -12,11 +12,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	/* cast unsigned char ptr to pass in to key_index function */
 	unsigned long int keyIndex, index;
-	char *cpyValue = strdup(value), *cpyKey = strdup(key); 
+	char *cpyValue = strdup(value), *cpyKey = strdup(key);
 	hash_node_t *newNode = NULL;
-	
+
 	/* make copy of value and then check for memory allocation */
-	if (!cpyValue || !key || !strlen(key) || !ht || !value || !cpyValue || !cpyKey)
+	if (!cpyValue || !cpyKey || !key || !strlen(key) || !ht || !value)
 	{
 		return (0);
 	}
@@ -25,7 +25,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* go through adding or updating key/value pair in keyIndex location */
 	for (; ht->array[index]; index++)
 	{
-		/* if keys match get rid of what is in there right now and replace with new Value */
+	/* if keys match get rid of what's in there and replace with new Value */
 		if (strcmp(ht->array[index]->key, key) == 0)
 		{
 			free(ht->array[index]->value);
@@ -35,21 +35,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	/* else create newNode to start storing key/value pairs */
 	newNode = malloc(sizeof(hash_node_t));
-	
+
 	if (!newNode)
 	{
 		free(cpyValue);
 		free(cpyKey);
 		return (0);
 	}
-	
+
 	newNode->next = NULL;
 	newNode->key = cpyKey;
 	newNode->value = cpyValue;
 	ht->array[keyIndex] = newNode;
-
-	printf("size: %lu ---- key: %lu --- value: %c\n", ht->size,  keyIndex, *cpyValue);
-
 
 	return (1);
 }
