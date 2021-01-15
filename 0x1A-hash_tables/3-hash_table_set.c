@@ -12,12 +12,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	/* cast unsigned char ptr to pass in to key_index function */
 	unsigned long int keyIndex;
-	const char *cpyValue = NULL;
+	char *cpyValue = strdup(value), *cpyKey = strdup(key); 
 	hash_node_t *newNode = NULL;
 	
 	/* make copy of value and then check for memory allocation */
-	cpyValue = strdup(value);
-	if (!cpyValue || !key || !strlen(key) || !ht || !value || !cpyValue)
+	if (!cpyValue || !key || !strlen(key) || !ht || !value || !cpyValue || !cpyKey)
 	{
 		return (0);
 	}
@@ -29,9 +28,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		newNode = malloc(sizeof(hash_node_t));
 		if (!newNode)
 			return (0);
-		
+		ht->array[keyIndex] = newNode;
 		newNode->next = NULL;
-		
+		newNode->key = cpyKey;
+		newNode->value = cpyValue;
+		return (1);
+
 	}
 	printf("size: %lu ---- key: %lu --- value: %c\n", ht->size,  keyIndex, *cpyValue);
 
