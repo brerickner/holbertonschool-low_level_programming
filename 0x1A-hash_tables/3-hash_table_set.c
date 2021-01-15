@@ -14,7 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *newNode = NULL;
 
 	/* make copy of value and then check for memory allocation */
-	if (!value || !key || !ht || strcmp(key, "") == 0 || strlen(key) == 0)
+	if (!value || !key || !ht || *key == '\0')
 		return (0);
 	/* use hash function to get new key index*/
 	index = key_index((unsigned char *)key, ht->size);
@@ -38,7 +38,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	newNode->next = ht->array[index];
 	newNode->key = strdup(key);
-	if (!newNode->key){
+	if (!newNode->key)
+	{
 		free(newNode);
 		return (0);
 	}
