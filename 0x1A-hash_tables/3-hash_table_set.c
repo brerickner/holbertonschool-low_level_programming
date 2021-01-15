@@ -10,20 +10,22 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
+	/* cast unsigned char ptr to pass in to key_index function */
 	unsigned long int keyIndex;
-	unsigned const char *cpyValue = NULL, *idxKey = key;
-	hash_node_t *addNode;
+	unsigned const char *idxKey = (unsigned char*) key;
+	const char *cpyValue = NULL;
+	/*hash_node_t *addNode;*/
 	
 	/* make copy of value and then check for memory allocation */
 	cpyValue = strdup(value);
-	if (!cpyValue || !key || strcmp(key, "") == "\0" || !ht || !value || !cpyValue)
+	if (!cpyValue || !key || strcmp(key, "") == 0 || !ht || !value || !cpyValue)
 	{
 		return (0);
 	}
-	/* get index by passing in */
+	/* get index by passing in modified key*/
 	keyIndex = key_index(idxKey, ht->size);
 	/* go through linked list looking for matching keys */
-	print("%c",*value)
+	printf("%c, %lu\n",*value, keyIndex);
 
 	return (1);
 }
