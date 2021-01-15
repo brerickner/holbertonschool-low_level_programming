@@ -17,13 +17,15 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		return (NULL);
 /* hashpass to find matching key and return the value at associated key */
 	index = key_index((const unsigned char *)key, ht->size);
-	if (!ht->array[index])
-		return (NULL);
-	/* proceed to following node when match found */
-	for (hashPass = ht->array[index]; hashPass; hashPass = hashPass->next)
+	if (ht->array[index])
 	{
-		if (strcmp(hashPass->key, key) == 0)
-			return (hashPass->value);
+	/* proceed to following node when match found */
+		for (hashPass = ht->array[index]; hashPass; hashPass = hashPass->next)
+		{
+			if (strcmp(hashPass->key, key) == 0)
+				break;	
+		}
+		return (hashPass->value);
 	}
 	/* else key not found */
 	return (NULL);
