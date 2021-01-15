@@ -12,7 +12,6 @@ void hash_table_delete(hash_table_t *ht)
 
 	if (!ht)
 		return;
-	printf("{");
 	for (index = 0; index < ht->size; index++)
 	{
 		for (hashPass = ht->array[index]; hashPass; hashPass = hold)
