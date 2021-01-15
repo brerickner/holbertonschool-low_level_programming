@@ -26,11 +26,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	for (; ht->array[index]; index++)
 	{
 		/* if keys match get rid of what is in there right now and replace with new Value */
-		if (strcmp(ht-array->key, key) == 0)
+		if (strcmp(ht->array[index]->key, key) == 0)
 		{
 			free(ht->array[index]->value);
 			ht->array[index]->value = cpyValue;
-			return (1)
+			return (1);
 		}
 	}
 	/* else create newNode to start storing key/value pairs */
@@ -47,10 +47,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	newNode->key = cpyKey;
 	newNode->value = cpyValue;
 	ht->array[keyIndex] = newNode;
-	
-	return (1);
 
-	}
 	printf("size: %lu ---- key: %lu --- value: %c\n", ht->size,  keyIndex, *cpyValue);
 
 
