@@ -13,12 +13,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *newNode = NULL;
 
-	if (!ht || !key || !value || strlen(key) == 0)
+	if (!ht || !key || !value || strlen(key) == 0 || strcmp(key, "") == 0)
 		return (0);
 	/* use hash function to get new key index*/
 	index = key_index((unsigned char *)key, ht->size);
 	/* go through adding or updating key/value pair in index location */
-	for (; ht->array[index]; index++)
+	while (ht->array[index])
 	{
 	/* if keys match get rid of what's in there and replace with new Value */
 		if (strcmp(ht->array[index]->key, key) == 0)
@@ -45,6 +45,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	newNode->value = strdup(value);
 	if (!newNode->value)
 		return (0);
-	ht->array[index] = newNode;
+	;
 	return (1);
 }
