@@ -13,7 +13,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (!ht || !key)
 		return (NULL);
-	if (strlen(key) == 0)
+	else if (strlen(key) == 0)
 		return (NULL);
 /* hashpass to find matching key and return the value at associated key */
 	index = key_index((const unsigned char *)key, ht->size);
