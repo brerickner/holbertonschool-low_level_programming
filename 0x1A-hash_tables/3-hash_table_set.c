@@ -12,11 +12,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	/* cast unsigned char ptr to pass in to key_index function */
 	unsigned long int keyIndex, index;
-	char *cpyValue = strdup(value), *cpyKey = NULL;
+	char *cpyValue = NULL, *cpyKey = NULL;
 	hash_node_t *newNode = NULL;
 
 	/* make copy of value and then check for memory allocation */
-	if (!cpyValue || !key || !strlen(key) || !ht || !value)
+	if (!value || !key || !ht || strcmp(key, "") == 0 || strlen(key) == 0)
 		return (0);
 	/* use hash function to get new key index*/
 	keyIndex = index = key_index((unsigned char *)key, ht->size);
