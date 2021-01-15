@@ -17,7 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!value || !key || !ht || strcmp(key, "") == 0 || strlen(key) == 0)
 		return (0);
 	/* use hash function to get new key index*/
-	keyIndex = index = key_index((unsigned char *)key, ht->size);
+	index = keyIndex = key_index((unsigned char *)key, ht->size);
 	/* go through adding or updating key/value pair in keyIndex location */
 	for (; ht->array[index]; index++)
 	{
