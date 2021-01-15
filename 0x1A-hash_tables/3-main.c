@@ -13,14 +13,18 @@ int main(void)
     hash_table_t *ht;
     int test;
 
-    ht = hash_table_create(1024);
+    ht = hash_table_create(12);
     test = hash_table_set(ht, "betty", "holberton");
     printf("%i\n", test);
     test = hash_table_set(ht, "austin", "rickner");
     printf("%i\n", test);
     test = hash_table_set(ht, "test", "test");
     printf("%i\n", test);
-    test = hash_table_set(ht, "hi", "there");
+    test = hash_table_set(ht, "", "there");
+    printf("%i\n", test);
+    test = hash_table_set(ht, "keytest", "");
+    printf("%i\n", test);
+    test = hash_table_set(ht, "", NULL);
     printf("%i\n", test);
     test = hash_table_set(ht, "bre", "rickner");
     printf("%i\n", test);
