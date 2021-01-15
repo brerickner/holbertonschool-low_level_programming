@@ -17,9 +17,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/* make copy of value and then check for memory allocation */
 	if (!cpyValue || !cpyKey || !key || !strlen(key) || !ht || !value)
-	{
 		return (0);
-	}
+
 	/* get index using typecasted key and create new Index*/
 	keyIndex = index = key_index((unsigned char *)key, ht->size);
 	/* go through adding or updating key/value pair in keyIndex location */
