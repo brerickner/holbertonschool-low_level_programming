@@ -20,7 +20,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	/* proceed to following node when match found */
 		for (hashPass = ht->array[index]; hashPass; hashPass = hashPass->next)
 		{
-			if (strcmp(hashPass->key, key) == 0)	
+			if (strcmp(hashPass->key, key) == 0)
 				return (hashPass->value);
 		}
 	}
