@@ -18,7 +18,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* make copy of value and then check for memory allocation */
 	if (!cpyValue || !key || !strlen(key) || !ht || !value)
 		return (0);
-
 	/* use hash function to get new key index*/
 	keyIndex = index = key_index((unsigned char *)key, ht->size);
 	/* go through adding or updating key/value pair in keyIndex location */
@@ -34,7 +33,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	/* else create newNode to start storing key/value pairs */
 	newNode = malloc(sizeof(hash_node_t));
-
 	if (!newNode)
 	{
 		free(cpyValue);
@@ -51,6 +49,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	newNode->key = cpyKey;
 	newNode->value = cpyValue;
 	ht->array[keyIndex] = newNode;
-
 	return (1);
 }
