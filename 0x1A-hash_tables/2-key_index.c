@@ -3,7 +3,7 @@
  * key_index - const unsigned char *key, unsigned long int size
  * @key: key
  * @size: size of the array of the hash table
- * description: funtion that gives you the index of a key.
+ * description: funtion that gives the index of a key
  * Return: index at which the key/value pair should be
  * stored in the array of the hash table
  */
