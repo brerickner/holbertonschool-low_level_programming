@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/* cast unsigned char ptr to pass in to key_index function */
 	unsigned long int keyIndex;
 	const char *cpyValue = NULL;
-	/*hash_node_t *addNode;*/
+	hash_node_t *newNode = NULL;
 	
 	/* make copy of value and then check for memory allocation */
 	cpyValue = strdup(value);
@@ -21,10 +21,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		return (0);
 	}
-	/* get index using typecasted key and create new Index with modulus*/
+	/* get index using typecasted key and create new Index*/
 	keyIndex = key_index((unsigned char *)key, ht->size);
-	/* go through linked list looking for matching keys */
+	/* when there is not a key/value pair in location */
+	if (!ht->array[keyIndex])
+	{
+		newNode = malloc(sizeof(hash_node_t));
+		if (!newNode)
+			return (0);
+		
+		newNode->next = NULL;
+		
+	}
 	printf("size: %lu ---- key: %lu --- value: %c\n", ht->size,  keyIndex, *cpyValue);
+
 
 	return (1);
 }
