@@ -13,8 +13,6 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (!ht || !key)
 		return (NULL);
-	if (strlen(key) == 0)
-		return (NULL);
 /* hashpass to find matching key and return the value at associated key */
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[index])
@@ -22,11 +20,9 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	/* proceed to following node when match found */
 		for (hashPass = ht->array[index]; hashPass; hashPass = hashPass->next)
 		{
-			if (strcmp(hashPass->key, key) == 0)
-				break;	
+			if (strcmp(hashPass->key, key) == 0)	
+				return (hashPass->value);
 		}
-		return (hashPass->value);
-	}
 	/* else key not found */
 	return (NULL);
 }
