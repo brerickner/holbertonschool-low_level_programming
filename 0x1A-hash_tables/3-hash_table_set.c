@@ -11,21 +11,21 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	hash_node_t *newNode = NULL;
+	hash_node_t *hashPass, *newNode = NULL;
 
-	if (!ht || !key || !value || strlen(key) == 0)
+	if (!ht || !key || !value)
 		return (0);
 	/* use hash function to get new key index*/
 	index = key_index((unsigned char *)key, ht->size);
 	/* go through adding or updating key/value pair in index location */
-	for (; ht->array[index]; index++)
+	for (hashPass = ht->array[index]; hashPass; hashPass = hashPass->next)
 	{
 	/* if keys match get rid of what's in there and replace with new Value */
-		if (strcmp(ht->array[index]->key, key) == 0)
+		if (strcmp(hashPass->key, key) == 0 && strcmp(hashPass->value, value) != 0)
 		{
-			free(ht->array[index]->value);
-			ht->array[index]->value = strdup(value);
-			if (!ht->array[index]->value)
+			free(hashPass->value);
+			hashPass->value = strdup(value);
+			if (!hashPass->value)
 				return (0);
 			return (1);
 		}
@@ -38,9 +38,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	newNode->next = ht->array[index];
 	newNode->key = strdup(key);
 	if (!newNode->key)
-	{
 		return (0);
-	}
 	newNode->value = strdup(value);
 	if (!newNode->value)
 		return (0);
