@@ -1,6 +1,3 @@
 
-CC = gcc
-OBJ = holberton
-
 all:
-	$(CC) main.c holberton.c -o $(OBJ)
+	gcc main.c holberton.c -o holberton
